@@ -1,3 +1,4 @@
+<?php include ("inc/db_config.php")?>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]> <html class="ie6"> <![endif]-->
 <!--[if IE 7 ]>    <html class="ie7"> <![endif]-->
@@ -95,8 +96,7 @@
 					<div class="carousel-caption">
 						<h2>A reliable way to travel</h2>
 						<p>Come and listen to a story about a man named Jed a poor mountaineer barely kept his family fed so lets make the most of this beautiful day since we are together it is a beautiful day in this neighborhood a beautiful day for a neighbor</p>
-						<a href="#" class="purchase">Purchase</a>
-						<a href="#" title="See More" class="see-more">See More</a>						
+						<a href="#" class="see-more">See More</a>						
 					</div>
 				</div>
 				<div class="item">
@@ -104,8 +104,7 @@
 					<div class="carousel-caption">
 						<h2>A reliable way to travel</h2>
 						<p>Come and listen to a story about a man named Jed a poor mountaineer barely kept his family fed so lets make the most of this beautiful day since we are together it is a beautiful day in this neighborhood a beautiful day for a neighbor</p>
-						<a href="#" class="purchase">Purchase</a>
-						<a href="#" class="see-more">See More</a>						
+						<a href="#" class="see-more">See More</a>		
 					</div>
 				</div>
 			</div>

@@ -82,110 +82,8 @@
 	<!-- Main Container -->
 	<div class="main-container">
 	<!-- Header -->
-	<header class="header-main">
-		<!-- Top Header -->
-		<div class="top-header container-fluid no-padding">
-			<!-- Container -->
-			<div class="container">
-				<ul class="col-md-4 social no-bottom-margin pull-left">
-					<li><a href="#"><img src="images/icon/fb-ic.png" alt="Facebook" /></a></li>	
-					<li><a href="#"><img src="images/icon/g+-ic.png" alt="Google pulse" /></a></li>
-					<li><a href="#"><img src="images/icon/tumbler-ic.png" alt="Tumbler" /></a></li>
-					<li><a href="#"><img src="images/icon/dribbble-ic.png" alt="dribbler" /></a></li>
-					<li><a href="#"><img src="images/icon/tw-ic.png" alt="Twitter" /></a></li>
-				</ul>
-				<div class="col-md-8 pull-right top-menu">
-					<ul class="no-bottom-margin">
-						<li><a href="#">Enquiry</a></li>
-						<li><a href="#">Cancellation</a></li>
-						<li><a href="#">Booking Status</a></li>
-						<li><a href="#">Tariffs</a></li>
-					</ul>
-				</div>
-			</div><!-- Container /- -->
-		</div><!-- Top Header /- -->
-
-		<!-- Logo Block -->
-		<div class="middle-header container-fluid no-padding">
-			<!-- Container -->
-			<div class="container">
-				<div class="col-md-4 logo-block pull-left">
-					<a href="#">
-						<img src="images/logo.png" alt="Logo" />
-						<b>National Cab</b><span>Always there for you</span>
-					</a>
-				</div>
-				<div class="col-md-6 pull-right">
-					<div class="location">
-						<img src="images/icon/location-ic.png" alt="Location" />
-						<p>A12 - Design Street,<span> Omaha, United States</span></p>
-					</div>
-					<div class="phone">
-						<img src="images/icon/phone-ic.png" alt="phone" />
-						<p>Call Us Any Time:<span> +(01) 123 456 789</span></p>
-					</div>
-				</div>
-			</div><!-- Container /- -->
-		</div><!-- Logo Block /- -->
-		<nav class="navbar ow-navigation">
-			<div class="container">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<div class="navbar-brand logo-block">
-						<a href="#">
-							<img src="images/logo.png" alt="Logo" />
-							<b>National Cab</b><span>Always there for you</span>
-						</a>
-					</div>
-				</div>
-				<div id="navbar" class="navbar-collapse collapse">
-					<ul class="nav navbar-nav">
-						<li class="active dropdown">
-							<a href="#top" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Home</a>
-							<i class="ddl-switch fa fa-angle-down"></i>
-							<ul class="dropdown-menu">
-								<li><a href="index.html">Home 1</a></li>
-								<li><a href="index-2.html">Home 2</a></li>
-							</ul>
-						</li>
-						<li><a href="about.html">About Us</a></li>
-						<li><a href="service.html">Our Services</a></li>
-						<li class="dropdown">
-							<a href="#blog" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
-							<i class="ddl-switch fa fa-angle-down"></i>
-							<ul class="dropdown-menu">
-								<li><a href="blog.html">Blog</a></li>
-								<li><a href="single-blog.html">Single Blog</a></li>
-							</ul>
-						</li>
-						<li class="dropdown">								
-							<a href="#faq" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Faq</a>
-							<i class="ddl-switch fa fa-angle-down"></i>
-							<ul class="dropdown-menu">
-								<li><a href="faq.html">Faq - Default</a></li>
-								<li><a href="faq-1.html">Faq - Accordion</a></li>
-							</ul>
-						</li>
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Pages</a>
-							<i class="ddl-switch fa fa-angle-down"></i>
-							<ul class="dropdown-menu">
-								<li><a href="online-booking.html">Online Booking</a></li>
-								<li><a href="error.html">404 - Error</a></li>
-							</ul>
-						</li>
-						<li><a href="contact-us.html">Contact US</a></li>							
-					</ul>						
-				</div>
-				<a href="#">Book For A Ride</a>
-			</div>
-		</nav>
-	</header><!-- Header /- -->
+	<?php include("inc/navbar.php"); ?>
+	<!-- Header /- -->
 	
 	<!-- Banner Section -->
 	<div id="page-banner" class="page-banner faq-banner container-fluid no-padding">
@@ -465,69 +363,9 @@
 		<div class="section-padding"></div>	
 	</div><!-- Counter App/- -->
 
-	<footer class="footer-main">
-		<!-- Container -->
-		<div class="container">			
-			<div class="col-md-4 col-sm-6">
-				<aside class="widget widget-subscribe">
-					<div class="subscribe-box">
-						<h4>Subscribe To Mail!</h4>
-						<p>Get our Daily email n.ewsletter with Special Services, Updates, Offers and more</p>
-						<div class="input-group">
-							<input type="text" class="form-control" placeholder="Email Address">
-							<span class="input-group-btn">
-								<button class="btn btn-default" type="button">SignUp</button>
-							</span>
-						</div><!-- /input-group -->
-					</div>
-					<ul>
-						<li><a href="#"><img src="images/icon/ftr-fb.png" alt="ftr" /></a></li>
-						<li><a href="#"><img src="images/icon/ftr-g+.png" alt="ftr" /></a></li>
-						<li><a href="#"><img src="images/icon/ftr-tumbler.png" alt="ftr" /></a></li>
-						<li><a href="#"><img src="images/icon/ftr-dribbble.png" alt="ftr" /></a></li>
-						<li><a href="#"><img src="images/icon/ftr-ln.png" alt="ftr" /></a></li>
-						<li><a href="#"><img src="images/icon/ftr-tw.png" alt="ftr" /></a></li>
-					</ul>
-				</aside>
-			</div>
-			<div class="col-md-4 col-sm-6">
-				<aside class="widget widget-links">
-					<h3 class="widget-title">We Glad To Offer</h3>
-					<ul>
-						<li><a href="#">24 / 7 Taxi Service To Any Where Around The City</a></li>
-						<li><a href="#">Sending Taxi Booking Alert By SMS</a></li>
-						<li><a href="#">GPS Tracking System For Location Guessing</a></li>
-						<li><a href="#">Instant Printed Bills In Car On Departure</a></li>
-						<li><a href="#">Magazine And News Papers For Reading On Ride</a></li>
-						<li><a href="#">Credit And Debit Card Payment Available</a></li>
-					</ul>
-				</aside>
-			</div>			
-			<div class="col-md-4 col-sm-6">
-				<aside class="widget widget-about">
-					<h3 class="widget-title">about Us</h3>
-					<p>Hello we are Comre. We are here to provide you the best offers through our coupons. Hello we are We are here to provide you coupons.</p>
-					<ul>
-						<li><img src="images/icon/ftr-location.png" alt="Address" />A12 - Design Street, <span>Omaha, United States</span></li>
-						<li><img src="images/icon/ftr-customer.png" alt="Phone" /> Customer Support : <span>+ 124 45 76 678</span></li>
-						<li><img src="images/icon/ftr-email.png" alt="Mail" /><span>Email :</span><a href="mailto:mail@NationalCab.com"> mail@NationalCab.com</a></li>
-					</ul>
-				</aside>
-			</div>
-		</div><!-- Container /- -->
-		<div class="bottom-footer container-fluid no-padding">
-			<div class="container">
-				<ul class="col-md-5 pull-left">
-					<li><a href="#">Faq</a></li>
-					<li><a href="#">News</a></li>
-					<li><a href="#">Client Support</a></li>
-				</ul>
-				<div class="col-md-7 pull-right">
-					<p class="copyright">copyrights &copy; 2015 National Cab. All rights reserved</p>
-				</div>
-			</div>
-		</div>
-	</footer>
+	<!-- <footer>-->
+		<?php include("inc/footer.php") ; ?>
+		<!--</footer> -->
 		
 	</div><!-- Main Container -->
 	<!-- JQuery v1.11.3 -->
