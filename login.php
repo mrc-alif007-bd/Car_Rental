@@ -69,7 +69,7 @@
     include_once("inc/db_config.php");
     extract($_POST);
     $password = md5($password);
-    $sql = "SELECT * FROM users WHERE email='$email' AND password_hash='$password'";
+    $sql = "SELECT * FROM admin WHERE username ='$email' AND password ='$password'";
     $record = $db->query($sql);
     $row = $record->fetch_assoc();
     //echo $record->num_rows;

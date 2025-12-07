@@ -156,7 +156,7 @@
 		<div class="section-padding"></div>
 	</div><!-- Choose Us/- -->
 	
-	
+
 	<!-- What We Do -->
 	<div class="container-fluid no-padding what-we-do">
 		<div class="section-padding"></div>

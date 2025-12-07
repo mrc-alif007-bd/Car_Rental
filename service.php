@@ -1,3 +1,4 @@
+<?php include ("inc/db_config.php")?>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]> <html class="ie6"> <![endif]-->
 <!--[if IE 7 ]>    <html class="ie7"> <![endif]-->
@@ -132,8 +133,8 @@
 		</div><!-- Container/-  -->
 		<div class="section-padding"></div>
 	</div><!-- What We Do/- -->
-	
 
+	
 	<!-- Vehicle Fleet -->
 	<div id="vehicle-fleet" class="container-fluid no-padding vehicle-fleet">
 		<div class="section-padding"></div>
@@ -324,46 +325,7 @@
 		<div class="section-padding"></div>	
 	</div><!-- - Vehicle Fleet /-  -->
 	
-	<!-- Counter Style2 -->
-	<div id="counter" class="container-fluid no-padding counter-style2">	
-		<div class="section-padding"></div>
-		<div class="container">
-			<!-- Counter -->
-			<div class="counter">
-				<div class="col-md-3 col-sm-3 col-xs-12">
-					<div class="statistics-box">
-						<h3><span>Successful Drives</span></h3>
-						<i class="statistics-icon"><img src="images/icon/car.png" alt="statistics-icon" /></i>
-						<span id="statistics_count-1" data-statistics_percent="1200"></span>
-					</div>						
-				</div>
-				<div class="col-md-3 col-sm-3 col-xs-12">
-					<div class="statistics-box">
-						<h3><span>Happy Customers</span></h3>
-						<i class="statistics-icon"><img src="images/icon/thumb-up.png" alt="statistics-icon" /></i>
-						<span id="statistics_count-2" data-statistics_percent="2000"></span>
-						
-					</div>						
-				</div>
-				<div class="col-md-3 col-sm-3 col-xs-12">
-					<div class="statistics-box">
-						<h3><span>Talented Drivers</span></h3>
-						<i class="statistics-icon"><img src="images/icon/driver.png" alt="statistics-icon" /></i>
-						<span id="statistics_count-3" data-statistics_percent="350"></span>
-						
-					</div>						
-				</div>
-				<div class="col-md-3 col-sm-3 col-xs-12">
-					<div class="statistics-box">
-						<h3><span>Cities Covered</span></h3>
-						<i class="statistics-icon"><img src="images/icon/milestone.png" alt="statistics-icon" /></i>
-						<span id="statistics_count-4" data-statistics_percent="148"></span>					
-					</div>						
-				</div>
-			</div><!-- Counter/- -->
-		</div>
-		<div class="section-padding"></div>
-	</div><!-- Counter Style2 /- -->
+
 	
 	<!-- Services -->
 	<div class="container-fluid no-padding services">
@@ -426,36 +388,7 @@
 		<div class="section-padding"></div>
 	</div><!-- -Services/- -->
 	
-	<!-- Partner -->
-	<div id="partner" class="container-fluid no-padding partner">
-		<div class="section-padding"></div>
-		<div class="container">
-			<div class="section-header">
-				<h3>Our Clients And Partners</h3>				
-			</div>
-			<div class="partner-carousel">
-				<div class="col-md-12">
-					<img src="images/partner/partner-1.png" alt="partner-1"/>
-				</div>
-				<div class="col-md-12">
-					<img src="images/partner/partner-2.png" alt="partner-2"/>
-				</div>
-				<div class="col-md-12">
-					<img src="images/partner/partner-3.png" alt="partner-3"/>
-				</div>
-				<div class="col-md-12">
-					<img src="images/partner/partner-4.png" alt="partner-4"/>
-				</div>
-				<div class="col-md-12">
-					<img src="images/partner/partner-5.png" alt="partner-5"/>
-				</div>
-				<div class="col-md-12">
-					<img src="images/partner/partner-6.png" alt="partner-6"/>
-				</div>
-			</div>
-		</div>
-		<div class="section-padding"></div>
-	</div><!-- Partner/- -->
+
 
 	<!-- <footer>-->
 		<?php include("inc/footer.php") ; ?>
