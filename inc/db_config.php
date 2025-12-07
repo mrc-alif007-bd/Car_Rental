@@ -7,4 +7,3 @@
 //  if ($db->connect_error) {
 //     die("Connection failed: " . $db->connect_error);
 //  }
-$admin_url = "http://localhost:8080/Mahfuzur/Car_rental/";

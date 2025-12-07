@@ -80,7 +80,7 @@
       $_SESSION['name'] = $row['name'] ;
       $_SESSION['photo'] = $row['photo'] ;
 
-      header("Location:index.php");
+      header("Location:admin/dashboard.php");
     }
     else{
       //echo $record->num_rows;
