@@ -42,7 +42,7 @@ include_once("db_config.php");
                     <a href="#" class="nav-link ">
                         <i class="fas fa-user"></i>
                         <p>
-                             Students
+                             Cars
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
@@ -50,13 +50,13 @@ include_once("db_config.php");
                         <li class="nav-item">
                             <a href="<?php  echo $admin_url ?>students/index.php" class="nav-link ">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>All Students</p>
+                                <p>All Cars</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="<?php  echo $admin_url ?>students/student_entry.php" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>New Students</p>
+                                <p>Add New Car</p>
                             </a>
                         </li>
 
@@ -86,7 +86,7 @@ include_once("db_config.php");
                         <li class="nav-item">
                             <a href="pages/tables/jsgrid.html" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>jsGrid</p>
+                                <p>CU</p>
                             </a>
                         </li>
                     </ul>
