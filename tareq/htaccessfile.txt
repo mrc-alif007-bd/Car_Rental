@@ -1,0 +1,12 @@
+RewriteEngine On
+
+# Allow these files without login
+RewriteCond %{REQUEST_URI} !login\.php$
+RewriteCond %{REQUEST_URI} !logout\.php$
+RewriteCond %{REQUEST_URI} !auth-check\.php$
+
+# Allow assets
+RewriteCond %{REQUEST_URI} !\.(css|js|png|jpg|jpeg|gif|svg)$
+
+# Redirect everything else to auth-check.php
+RewriteRule ^(.*)$ auth-check.php?path=$1 [L]
