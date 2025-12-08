@@ -5,7 +5,7 @@ if(!isset($_SESSION['loggedin'])){
 }
 
 ?>
-<?php include_once("inc/db_config.php"); ?>
+<?php include_once("../inc/db_config.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -66,9 +66,12 @@ if(!isset($_SESSION['loggedin'])){
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
                 <li class="breadcrumb-item active">Dashboard v1</li>
               </ol>
-            </div><!-- /.col -->
-          </div><!-- /.row -->
-        </div><!-- /.container-fluid -->
+            </div>
+            <!-- /.col -->
+          </div>
+          <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
       </div>
       <!-- /.content-header -->
 

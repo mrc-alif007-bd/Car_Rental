@@ -1,5 +1,5 @@
 <?php 
-include_once("db_config.php");
+include_once("inc/db_config.php");
  ?>
 <nav class="main-header navbar navbar-expand navbar-white navbar-light">
     <!-- Left navbar links -->

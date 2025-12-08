@@ -1,7 +1,7 @@
 <?php 
+include_once("../../inc/db_config.php");
 
-include_once("db_config.php");
- ?>
+?>
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="<?php echo $admin_url ?>dashboard.php" class="brand-link">
@@ -54,7 +54,7 @@ include_once("db_config.php");
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?php  echo $admin_url ?>students/student_entry.php" class="nav-link">
+                            <a href="add_new_car.php" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Add New Car</p>
                             </a>

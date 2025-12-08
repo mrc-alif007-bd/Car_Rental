@@ -65,11 +65,12 @@
 </head>
 <body class="hold-transition login-page">
 <div class="login-box">
-  <?php if(isset($_POST['login'])){
+  <?php 
+  if(isset($_POST['login'])){
     include_once("inc/db_config.php");
     extract($_POST);
     $password = md5($password);
-    $sql = "SELECT * FROM admin WHERE username ='$email' AND password ='$password'";
+    $sql = "SELECT * FROM users WHERE email ='$email' AND password ='$password'";
     $record = $db->query($sql);
     $row = $record->fetch_assoc();
     //echo $record->num_rows;
