@@ -19,7 +19,7 @@
 										<li><a href="about.php">About</a></li>
 										<li><a href="service.php">Services</a></li>
 										<li><a href="contact_us.php">Contact</a></li>
-										<li><a href="login.php">Login</a></li>
+										<li><a href="admin/login.php">Login</a></li>
 										<li><a href="online_booking.php">Book Now</a></li>
 									</ul>
 								</div>

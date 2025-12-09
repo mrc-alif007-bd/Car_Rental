@@ -114,22 +114,22 @@
 				<div class="col-md-8 col-sm-12">
 					<form class="row" id="contact-form" method="post">
 						<div class="col-md-6 col-sm-6 form-group">
-							<input type="text" class="form-control" id="input_name" name="contact-name" placeholder="Your Name" required>
+							<input type="text" class="form-control" id="input_name" name="name" placeholder="Your Name" required>
 						</div>
 						<div class="col-md-6 col-sm-6 form-group">
-							<input type="email" class="form-control" id="input_email" name="contact-email" placeholder="E-mail Address" required>
+							<input type="email" class="form-control" id="input_email" name="email" placeholder="E-mail Address" required>
 						</div>
 						<div class="col-md-6 col-sm-6 form-group">
-							<input type="text" class="form-control" id="input_phone" name="contact-phone" placeholder="Phone" required>
+							<input type="text" class="form-control" id="input_phone" name="phone" placeholder="Phone" required>
 						</div>
 						<div class="col-md-6 col-sm-6 form-group">
-							<input type="text" class="form-control" id="input_subject" name="contact-subject" placeholder="Subject" required>
+							<input type="text" class="form-control" id="input_subject" name="subject" placeholder="Subject" required>
 						</div>
 						<div class="col-md-12 col-sm-12 form-group">
-							<textarea class="form-control" rows="8" cols="50" id="textarea_message" name="contact-message" placeholder="Message:" required></textarea>
+							<textarea class="form-control" rows="8" cols="50" id="textarea_message" name="message" placeholder="Message:" required></textarea>
 						</div>
 						<div class="col-md-12">
-							<button type="submit" id="btn_submit" class="btn btn-default">Send Message</button>
+							<button type="submit" name="submit" class="btn btn-default">SUBMIT</button>
 						</div>
 						<div id="alert-msg" class="alert-msg"></div>
 					</form>
