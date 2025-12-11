@@ -69,7 +69,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="<?php  echo $admin_url ?>students/index.php" class="nav-link ">
+                            <a href="employees.php" class="nav-link ">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>All Employees</p>
                             </a>
@@ -93,7 +93,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="<?php  echo $admin_url ?>students/index.php" class="nav-link ">
+                            <a href="client.php" class="nav-link ">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>All Client</p>
                             </a>
