@@ -1,11 +1,8 @@
-<?php 
 
-include_once("db_config.php");
- ?>
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="<?php echo $admin_url ?>dashboard.php" class="brand-link">
-        <img src="<?php echo $admin_url ?>dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <img src="<?php echo $admin_url ?>admin/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
         <span class="brand-text font-weight-light">Dashboard</span>
     </a>
 
@@ -54,12 +51,53 @@ include_once("db_config.php");
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?php  echo $admin_url ?>students/student_entry.php" class="nav-link">
+                            <a href="add_new_car.php" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Add New Car</p>
                             </a>
                         </li>
 
+                    </ul>
+                </li>
+                <li class="nav-item ">
+                    <a href="#" class="nav-link ">
+                        <i class="fas fa-user"></i>
+                        <p>
+                             Employees
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="<?php  echo $admin_url ?>students/index.php" class="nav-link ">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>All Employees</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="add_new_car.php" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Add New Employee</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li class="nav-item ">
+                    <a href="#" class="nav-link ">
+                        <i class="fas fa-user"></i>
+                        <p>
+                             Client
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="<?php  echo $admin_url ?>students/index.php" class="nav-link ">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>All Client</p>
+                            </a>
+                        </li>
                     </ul>
                 </li>
                 <li class="nav-item">
@@ -78,9 +116,9 @@ include_once("db_config.php");
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/tables/data.html" class="nav-link">
+                            <a href="employees.php" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>DataTables</p>
+                                <p>Employees</p>
                             </a>
                         </li>
                         <li class="nav-item">
