@@ -1,4 +1,10 @@
-<?php include_once("../inc/db_config.php"); ?>
+<?php
+session_start(); 
+if(!isset($_SESSION['admin_login'])){
+  header("Location:login.php");
+}
+ include_once("../inc/db_config.php"); 
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

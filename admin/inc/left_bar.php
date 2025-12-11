@@ -1,7 +1,7 @@
 
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="<?php echo $admin_url ?>dashboard.php" class="brand-link">
+    <a href="<?php echo $admin_url ?>dashboard_admin.php" class="brand-link">
         <img src="<?php echo $admin_url ?>admin/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
         <span class="brand-text font-weight-light">Dashboard</span>
     </a>
@@ -112,13 +112,13 @@
                         <li class="nav-item">
                             <a href="pages/tables/simple.html" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Simple Tables</p>
+                                <p>Contact Tables</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="employees.php" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Employees</p>
+                                <p>Testimonial Table</p>
                             </a>
                         </li>
                         <li class="nav-item">
