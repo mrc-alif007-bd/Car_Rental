@@ -1,6 +1,6 @@
 <?php 
 session_start(); 
-if(!isset($_SESSION['admin_login'])){
+if(!isset($_SESSION['cleint_login'])){
   header("Location:login.php");
 }
 ?>
@@ -48,7 +48,7 @@ if(!isset($_SESSION['admin_login'])){
     <!-- /.navbar -->
 
     <!-- Main Sidebar Container -->
-    <?php include_once("inc/left_bar1.php"); ?>
+    <?php include_once("inc/left_bar3.php"); ?>
     <!--/. Main Sidebar Container -->
 
     <!-- Content Wrapper. Contains page content -->

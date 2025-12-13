@@ -35,15 +35,18 @@ session_start();
                     $_SESSION['admin_login'] = $email;
                     $_SESSION['email'] = $email ;
                     $_SESSION['name'] = $row['name'] ;
-                    $_SESSION['photo'] = $row['photo'] ;
                     header("Location:dashboard_admin.php");
                 }
                 if ($role == 2) {
                     $_SESSION['employee_login'] = $email;
+                    $_SESSION['email'] = $email ;
+                    $_SESSION['name'] = $row['name'] ;
                     header("Location:dashboard_employee.php");
                 }
                 if ($role == 3) {
                     $_SESSION['cleint_login'] = $email;
+                    $_SESSION['email'] = $email ;
+                    $_SESSION['name'] = $row['name'] ;
                     header("Location:dashboard_cleint.php");
                 }
             } else {
