@@ -69,7 +69,7 @@ if(!isset($_SESSION['admin_login'])){
                   extract($_POST);
                   $p_name = $_FILES['photo']['name'];
                   $tmp_name = $_FILES['photo']['tmp_name'];
-                  $path =  "images/".$p_name ;
+                  $path =  "img/".$p_name ;
                   move_uploaded_file($tmp_name, $path);
                   $sql = "INSERT INTO cars VALUES(NULL, '$name', '$brand', '$type', '$model_year', '$reg_no', '$price', '$status', '$path')";
                   $db->query($sql);

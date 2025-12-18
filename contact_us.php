@@ -125,10 +125,10 @@
                 ?>
 					<form action="" class="row" id="contact-form" method="post">
 						<div class="col-md-6 col-sm-6 form-group">
-							<input type="text" class="form-control" id="input_name" name="name" placeholder="Your Name" required>
+							<input type="text" class="form-control" id="input_name" name="u_name" placeholder="Your Name" required>
 						</div>
 						<div class="col-md-6 col-sm-6 form-group">
-							<input type="email" class="form-control" id="input_email" name="email" placeholder="E-mail Address" required>
+							<input type="email" class="form-control" id="input_email" name="u_email" placeholder="E-mail Address" required>
 						</div>
 						<div class="col-md-6 col-sm-6 form-group">
 							<input type="text" class="form-control" id="input_phone" name="phone" placeholder="Phone" required>
