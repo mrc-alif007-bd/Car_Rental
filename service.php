@@ -142,184 +142,37 @@
 			<div class="section-header">
 				<h3>Vehicles In Our Fleet</h3>				
 			</div>
-			<div class="vehicle-tabs">
-				<!-- Nav Tabs -->
-				<ul class="nav nav-tabs" role="tablist">
-					<li role="presentation" class="active"><a href="#luxury_cars" role="tab" data-toggle="tab">Luxury Cars</a></li>
-					<li role="presentation"><a href="#regular_rider" role="tab" data-toggle="tab">Regular Rider</a></li>
-					<li role="presentation"><a href="#airport_shuttle" role="tab" data-toggle="tab">Airport Shuttle</a></li>
-				</ul><!-- Nav Tabs /- -->
-				<!-- Tab Content -->
-				<div class="tab-content">
-					<!-- Tabs -->
-					<div role="tabpanel" class="tab-pane fade in active" id="luxury_cars">
-						<div class="col-md-7 vehicle-slider no-padding">
-							<div class="row">
-								<div class="main-slider">
-									<div id="slider-1" class="flexslider">
-										<ul class="slides">
-											<li><img src="images/vehicles-fleet/item-1.jpg" alt="item-1"/></li>
-											<li><img src="images/vehicles-fleet/item-2.jpg" alt="item-2"/></li>
-											<li><img src="images/vehicles-fleet/item-3.jpg" alt="item-3"/></li>
-											<li><img src="images/vehicles-fleet/item-1.jpg" alt="item-1"/></li>					
-										</ul>
-									</div>
-								</div>
-								<div class="thumbnail-slider">
-									<div id="carousel-1" class="flexslider">
-										<ul class="slides">
-											<li><img src="images/vehicles-fleet/thumb-item-1.jpg" alt="item-1"/></li>
-											<li><img src="images/vehicles-fleet/thumb-item-1.jpg" alt="item-1"/></li>
-											<li><img src="images/vehicles-fleet/thumb-item-1.jpg" alt="item-1"/></li>
-											<li><img src="images/vehicles-fleet/thumb-item-1.jpg" alt="item-1"/></li>
-											<li><img src="images/vehicles-fleet/thumb-item-1.jpg" alt="item-1"/></li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</div>					
-						<div class="col-md-5 vehicle-detail">
-							<!-- Nav tabs -->
-							<ul class="nav nav-tabs" role="tablist">
-								<li role="presentation" class="active"><a href="#cab_details-1" role="tab" data-toggle="tab">Cab Details</a></li>
-								<li role="presentation"><a href="#customer_feedback-1" role="tab" data-toggle="tab"> Customer Feedback</a></li>
-							</ul>
-							<!-- Tab panes -->
-							<div class="tab-content">
-								<div role="tabpanel" class="tab-pane active" id="cab_details-1">
-									<div class="tabe-content">
-										<h3>Passenger Capacity <span>4 + 1 Driver</span></h3>
-										<h3>Regular Fare <span>$6 / Km (Day Travel)</span></h3>
-										<h3>Maximum Speed <span>60Km / hr - City Limit</span></h3>
-										<h3>Availability <span>Offering Anytime</span></h3>
-										<h3>Contract Details <span><a href="#">Contact Now</a></span></h3>
-									</div>
-								</div>
-								<div role="tabpanel" class="tab-pane" id="customer_feedback-1"> 
-									<div class="tabe-content">
-										<h3>Passenger Capacity <span>4 + 1 Driver</span></h3>
-										<h3>Regular Fare <span>$6 / Km (Day Travel)</span></h3>
-										<h3>Maximum Speed <span>60Km / hr - City Limit</span></h3>
-										<h3>Availability <span>Offering Anytime</span></h3>
-										<h3>Contract Details <span><a href="#">Contact Now</a></span></h3>
-									</div>
-								</div>
-							</div>
+			<div class="choose-carousel">			
+				<div class="col-md-12">
+					<div class="choose-us-box">
+						<div class="choose-img-box"><img src="images/choose-us/choose-us-4.jpg" alt="choose-us-4"/></div>
+						<div class="choose-us-content-box">
+							<h3>Trust And Safety</h3>
+							<p>The first mate and his Skipper too will do their very best to make the others in their tropic island nest the year.</p>
+							<a href="#">Read More</a>
 						</div>
-					</div><!-- Tabs /- -->
-					<!-- Tabs -->
-					<div role="tabpanel" class="tab-pane fade" id="regular_rider">
-						<div class="col-md-7 vehicle-slider no-padding">
-							<div class="row">
-								<div class="main-slider">
-									<div id="slider-2" class="flexslider">
-										<ul class="slides">
-											<li><img src="images/vehicles-fleet/item-1.jpg" alt="item-1"/></li>
-											<li><img src="images/vehicles-fleet/item-2.jpg" alt="item-2"/></li>
-											<li><img src="images/vehicles-fleet/item-3.jpg" alt="item-3"/></li>
-											<li><img src="images/vehicles-fleet/item-1.jpg" alt="item-1"/></li>					
-										</ul>
-									</div>
-								</div>
-								<div class="thumbnail-slider">
-									<div id="carousel-2" class="flexslider">
-										<ul class="slides">
-											<li><img src="images/vehicles-fleet/thumb-item-1.jpg" alt="item-1"/></li>
-											<li><img src="images/vehicles-fleet/thumb-item-1.jpg" alt="item-1"/></li>
-											<li><img src="images/vehicles-fleet/thumb-item-1.jpg" alt="item-1"/></li>
-											<li><img src="images/vehicles-fleet/thumb-item-1.jpg" alt="item-1"/></li>
-											<li><img src="images/vehicles-fleet/thumb-item-1.jpg" alt="item-1"/></li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</div>					
-						<div class="col-md-5 vehicle-detail">
-							<!-- Nav tabs -->
-							<ul class="nav nav-tabs" role="tablist">
-								<li role="presentation" class="active"><a href="#cab_details-2" role="tab" data-toggle="tab">Cab Details</a></li>
-								<li role="presentation"><a href="#customer_feedback-2" role="tab" data-toggle="tab"> Customer Feedback</a></li>
-							</ul>
-							<!-- Tab panes -->
-							<div class="tab-content">
-								<div role="tabpanel" class="tab-pane active" id="cab_details-2">
-									<div class="tabe-content">
-										<h3>Passenger Capacity <span>4 + 1 Driver</span></h3>
-										<h3>Regular Fare <span>$6 / Km (Day Travel)</span></h3>
-										<h3>Maximum Speed <span>60Km / hr - City Limit</span></h3>
-										<h3>Availability <span>Offering Anytime</span></h3>
-										<h3>Contract Details <span><a href="#">Contact Now</a></span></h3>
-									</div>
-								</div>
-								<div role="tabpanel" class="tab-pane" id="customer_feedback-2"> 
-									<div class="tabe-content">
-										<h3>Passenger Capacity <span>4 + 1 Driver</span></h3>
-										<h3>Regular Fare <span>$6 / Km (Day Travel)</span></h3>
-										<h3>Maximum Speed <span>60Km / hr - City Limit</span></h3>
-										<h3>Availability <span>Offering Anytime</span></h3>
-										<h3>Contract Details <span><a href="#">Contact Now</a></span></h3>
-									</div>
-								</div>
-							</div>
+					</div>
+				</div>
+				<div class="col-md-12">
+					<div class="choose-us-box">
+						<div class="choose-img-box"><img src="images/choose-us/choose-us-1.jpg" alt="choose-us-1"/></div>
+						<div class="choose-us-content-box">
+							<h3>Feel The Comfort</h3>
+							<p>The first mate and his Skipper too will do their very best to make the others in their tropic island nest the year.</p>
+							<a href="#">Read More</a>
 						</div>
-					</div><!-- Tabs /- -->
-					<!-- Tabs -->
-					<div role="tabpanel" class="tab-pane fade" id="airport_shuttle">
-						<div class="col-md-7 vehicle-slider no-padding">
-							<div class="row">
-								<div class="main-slider">
-									<div id="slider-3" class="flexslider">
-										<ul class="slides">
-											<li><img src="images/vehicles-fleet/item-1.jpg" alt="item-1"/></li>
-											<li><img src="images/vehicles-fleet/item-2.jpg" alt="item-2"/></li>
-											<li><img src="images/vehicles-fleet/item-3.jpg" alt="item-3"/></li>
-											<li><img src="images/vehicles-fleet/item-1.jpg" alt="item-1"/></li>					
-										</ul>
-									</div>
-								</div>
-								<div class="thumbnail-slider">
-									<div id="carousel-3" class="flexslider">
-										<ul class="slides">
-											<li><img src="images/vehicles-fleet/thumb-item-1.jpg" alt="item-1"/></li>
-											<li><img src="images/vehicles-fleet/thumb-item-1.jpg" alt="item-1"/></li>
-											<li><img src="images/vehicles-fleet/thumb-item-1.jpg" alt="item-1"/></li>
-											<li><img src="images/vehicles-fleet/thumb-item-1.jpg" alt="item-1"/></li>
-											<li><img src="images/vehicles-fleet/thumb-item-1.jpg" alt="item-1"/></li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</div>					
-						<div class="col-md-5 vehicle-detail">
-							<!-- Nav tabs -->
-							<ul class="nav nav-tabs" role="tablist">
-								<li role="presentation" class="active"><a href="#cab_details-3" role="tab" data-toggle="tab">Cab Details</a></li>
-								<li role="presentation"><a href="#customer_feedback-3" role="tab" data-toggle="tab"> Customer Feedback</a></li>
-							</ul>
-							<!-- Tab panes -->
-							<div class="tab-content">
-								<div role="tabpanel" class="tab-pane active" id="cab_details-3">
-									<div class="tabe-content">
-										<h3>Passenger Capacity <span>4 + 1 Driver</span></h3>
-										<h3>Regular Fare <span>$6 / Km (Day Travel)</span></h3>
-										<h3>Maximum Speed <span>60Km / hr - City Limit</span></h3>
-										<h3>Availability <span>Offering Anytime</span></h3>
-										<h3>Contract Details <span><a href="#">Contact Now</a></span></h3>
-									</div>
-								</div>
-								<div role="tabpanel" class="tab-pane" id="customer_feedback-3"> 
-									<div class="tabe-content">
-										<h3>Passenger Capacity <span>4 + 1 Driver</span></h3>
-										<h3>Regular Fare <span>$6 / Km (Day Travel)</span></h3>
-										<h3>Maximum Speed <span>60Km / hr - City Limit</span></h3>
-										<h3>Availability <span>Offering Anytime</span></h3>
-										<h3>Contract Details <span><a href="#">Contact Now</a></span></h3>
-									</div>
-								</div>
-							</div>
+					</div>
+				</div>
+				<div class="col-md-12">
+					<div class="choose-us-box">
+						<div class="choose-img-box"><img src="images/choose-us/choose-us-5.jpg" alt="choose-us-5"/></div>
+						<div class="choose-us-content-box">
+							<h3>Experienced Drivers</h3>
+							<p>The first mate and his Skipper too will do their very best to make the others in their tropic island nest the year.</p>
+							<a href="#">Read More</a>
 						</div>
-					</div><!-- Tabs /- -->	
-				</div><!-- Tab Content /-  -->
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="section-padding"></div>	

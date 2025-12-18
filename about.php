@@ -136,10 +136,13 @@
 						</div>
 					</div>
 				</div>
-			</div><!-- Choose Carousel/- -->
-		</div><!-- Container/- -->
+			</div>
+			<!-- Choose Carousel/- -->
+		</div>
+		<!-- Container/- -->
 		<div class="section-padding"></div>
-	</div><!-- Choose Us/- -->
+	</div>
+	<!-- Choose Us/- -->
 	
 	<!-- Members -->
 	<div class="container-fluid no-padding members members-style2">

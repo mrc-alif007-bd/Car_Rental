@@ -112,7 +112,18 @@
 					<p>Got kind of tired packin' and unpackin' - town to town and up and down the dial. Movin' on up to the east side. We finally got a piece of the pie.</p>
 				</div>
 				<div class="col-md-8 col-sm-12">
-					<form class="row" id="contact-form" method="post">
+					<?php 
+                if(isset($_POST['submit'])){
+                  extract($_POST);
+                  $sql = "INSERT INTO contact VALUES(NULL, '$u_name', '$u_email', '$phone', '$subject', '$message')";
+                  $db->query($sql);
+                  if($db->affected_rows){
+                    echo '<div class="alert alert-success">Successfully Submitted</div>';
+                  }
+                }
+                
+                ?>
+					<form action="" class="row" id="contact-form" method="post">
 						<div class="col-md-6 col-sm-6 form-group">
 							<input type="text" class="form-control" id="input_name" name="name" placeholder="Your Name" required>
 						</div>
@@ -129,7 +140,7 @@
 							<textarea class="form-control" rows="8" cols="50" id="textarea_message" name="message" placeholder="Message:" required></textarea>
 						</div>
 						<div class="col-md-12">
-							<button type="submit" name="submit" class="btn btn-default">SUBMIT</button>
+							<input type="submit" name="submit" value="SUBMIT">
 						</div>
 						<div id="alert-msg" class="alert-msg"></div>
 					</form>

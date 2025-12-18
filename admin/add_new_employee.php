@@ -50,7 +50,7 @@ if(!isset($_SESSION['admin_login'])){
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Car Add Table</li>
+              <li class="breadcrumb-item active">Employee Add Table</li>
             </ol>
           </div>
         </div>
@@ -85,35 +85,23 @@ if(!isset($_SESSION['admin_login'])){
             <div class="card-body">
               <form action="" method="post" enctype="multipart/form-data">
                 <div class="formgroup">
-                <label for="input-id" class="col-sm-2">Car Name</label>
-                <input type="text" name="name" class="form-control" placeholder="Enter your car name">
+                <label for="input-id" class="col-sm-2">Name</label>
+                <input type="text" name="name" class="form-control" placeholder="Enter your name">
               </div>
                 <div class="formgroup">
-                <label for="input-id" class="col-sm-2">Brand</label>
-                <input type="text" name="brand" class="form-control" placeholder="Enter your car price">
+                <label for="input-id" class="col-sm-2">Email</label>
+                <input type="text" name="email" class="form-control" placeholder="Enter your Email">
               </div>
                 <div class="formgroup">
-                <label for="input-id" class="col-sm-2">type</label>
-                <input type="text" name="type" class="form-control" placeholder="Enter your car price">
+                <label for="input-id" class="col-sm-2">Password</label>
+                <input type="text" name="password" class="form-control" placeholder="Enter your password">
               </div>
                 <div class="formgroup">
-                <label for="input-id" class="col-sm-2">model_year</label>
-                <input type="text" name="model_year" class="form-control" placeholder="Enter your car price">
+                <label for="input-id" class="col-sm-2">Role</label>
+                <input type="text" name="role" class="form-control" placeholder="Enter the role">
               </div>
                 <div class="formgroup">
-                <label for="input-id" class="col-sm-2">Reg_no</label>
-                <input type="text" name="reg_no" class="form-control" placeholder="Enter your car price">
-              </div>
-                <div class="formgroup">
-                <label for="input-id" class="col-sm-2">price</label>
-                <input type="text" name="price" class="form-control" placeholder="Enter your car price">
-              </div>
-                <div class="formgroup">
-                <label for="input-id" class="col-sm-2">status</label>
-                <input type="text" name="status" class="form-control" placeholder="Enter your car price">
-              </div>
-                <div class="formgroup">
-                <label for="input-id" class="col-sm-2">Photo</label>
+                <label for="input-id" class="col-sm-2">Nid-Photo</label>
                 <input type="file" name="photo" class="form-control" placeholder="Enter your car's photo">
               </div>
                 

@@ -30,7 +30,7 @@ if(!isset($_SESSION['admin_login'])){
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-   <?php include_once("inc/left_bar2.php"); ?>
+   <?php include_once("inc/left_bar1.php"); ?>
 
   <!-- Main Sidebar Container --> 
 
@@ -72,23 +72,30 @@ if(!isset($_SESSION['admin_login'])){
                   <tr>
                     <th>User id</th>
                     <th>Name</th>
-                    <th>Salary</th>
-                    <th>Status</th>
-                    <th>Creat at</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Created at</th>
+                    <th>Action</th>
                   </tr>
                   </thead>
                   <tbody>
-                    <?php ?>
+                    <?php 
+                    $sql = "SELECT `user_id`,`name`,`email`,`role`,`created_at` FROM `users` WHERE `role`= 2";
+                     $rawData = $db->query($sql);
+                  while($row = $rawData->fetch_object()): 
+                    ?>
                   <tr>
-                    <td>Trident</td>
-                    <td>Internet
-                      Explorer 4.0
-                    </td>
-                    <td>Win 95+</td>
-                    <td> 4</td>
-                    <td>X</td>
+                    <td><?php echo $row->user_id; ?></td>
+                    <td><?php echo $row->name; ?></td>
+                    <td><?php echo $row->email; ?></td>
+                    <td><?php echo $row->role; ?></td>
+                    <td><?php echo $row->created_at; ?></td>
+                    <td></td>
                   </tr>
-                  <?php ?>
+                   <?php 
+                  endwhile;
+                  $db->close();
+                  ?>
                   </tbody>
                 </table>
               </div>
