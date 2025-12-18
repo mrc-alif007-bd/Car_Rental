@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 11, 2025 at 02:23 AM
+-- Generation Time: Dec 18, 2025 at 02:35 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `carrental`
+-- Database: `car_rental`
 --
 
 -- --------------------------------------------------------
@@ -95,7 +95,32 @@ CREATE TABLE `cars` (
 INSERT INTO `cars` (`car_id`, `car_name`, `brand`, `type`, `model_year`, `registration_no`, `rent_price`, `status`, `image`) VALUES
 (1, 'BMW', 'toyota', 'mercedes', 2550, '48749067', 93488.00, 'not good', NULL),
 (2, 'BMW', 'toyota', 'mercedes', 2550, '0012455', 5000.00, 'dur', NULL),
-(3, 'php', 'js', 'phython', 2017, '51222377455', 5000.00, 'dur', NULL);
+(3, 'php', 'js', 'phython', 2017, '51222377455', 5000.00, 'dur', NULL),
+(4, 'BMW', 'toyota', 'mercedes', 2550, '48749067', 7000.00, 'not good', NULL),
+(5, '', 'toyota', 'mercedes', 2550, '0012455', 93488.00, 'ok', 'images/'),
+(6, '', 'js', 'phython', 2017, '48749067', 93488.00, 'not good', 'images/'),
+(7, '', 'js', 'phython', 2017, '48749067', 93488.00, 'not good', 'images/'),
+(8, 'car_01.jpeg', 'js', 'phython', 2550, '51222377455', 93488.00, 'not good', 'images/car_01.jpeg'),
+(9, '', '', '', 0, '', 0.00, '', 'images/'),
+(10, 'car_01.jpeg', 'bmw', 'jeep', 2017, '51222377455', 5000.00, 'ewhruwrygu', 'images/car_01.jpeg'),
+(11, 'BMW', 'js', 'suv', 2016, '0987654321', 123456.00, 'not good', 'images/car_01.jpeg'),
+(12, 'BMW', 'bmw', 'suv', 2016, '48749067', 7000.00, 'ok', 'images/car_02.1.jfif');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contact`
+--
+
+CREATE TABLE `contact` (
+  `contact_id` int(11) NOT NULL,
+  `u_name` varchar(50) NOT NULL,
+  `u_email` varchar(100) NOT NULL,
+  `phone` varchar(20) NOT NULL,
+  `subject` varchar(50) NOT NULL,
+  `message` varchar(400) NOT NULL,
+  `created_at` date NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -119,13 +144,7 @@ CREATE TABLE `customers` (
 
 CREATE TABLE `employees` (
   `employee_id` int(11) NOT NULL,
-  `user_id` int(11) DEFAULT NULL,
-  `position` varchar(120) DEFAULT NULL,
-  `phone` varchar(20) DEFAULT NULL,
-  `hire_date` date DEFAULT NULL,
-  `salary` decimal(10,2) DEFAULT NULL,
-  `license_no` varchar(50) DEFAULT NULL,
-  `status` varchar(50) DEFAULT NULL
+  `user_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -182,7 +201,7 @@ CREATE TABLE `users` (
   `email` varchar(150) DEFAULT NULL,
   `password` char(32) DEFAULT NULL,
   `role` varchar(50) DEFAULT NULL,
-  `created_at` datetime DEFAULT NULL
+  `created_at` timestamp NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -190,8 +209,16 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `name`, `email`, `password`, `role`, `created_at`) VALUES
-(1, 'admin', 'admin@gmail.com', '21232f297a57a5a743894a0e4a801fc3', 'admin', NULL),
-(2, 'admin', 'admin@gmail.com', '21232f297a57a5a743894a0e4a801fc3', 'admin', NULL);
+(1, 'admin', 'admin@gmail.com', '21232f297a57a5a743894a0e4a801fc3', '1', NULL),
+(3, 'employee', 'employee@gmail.com', 'fa5473530e4d1a5a1e1eb53d2fedb10c', '2', NULL),
+(4, 'cleint', 'cleint@gmail.com', 'b5a19d74a977fd08612e71ac7fe244cb', '3', NULL),
+(5, 'kawsar', 'kawsar@gmail.com', '8a15329d6eaf13bce1193bd42d0dd5aa', '2', '2025-12-17 19:47:12'),
+(6, 'tareq', 'tareq@gmail.com', '0d20b93812a60f072cbcf2ac64b271a6', '2', '2025-12-17 19:48:35'),
+(7, 'ziya', 'ziya@gmail.com', 'd77f18448567c402188661e60731311b', '2', '2025-12-17 19:50:05'),
+(8, 'rana', 'rana@gmail.com', '90a1e95dba0d3d9c11e3f220cc4f7879', '2', '2025-12-17 19:50:05'),
+(9, 'arif', 'arif@gmail.com', '0ff6c3ace16359e41e37d40b8301d67f', '3', '2025-12-17 19:52:11'),
+(10, 'rakib', 'rakib@gmail.com', 'a36949228c1d9146cace6359d88968e8', '3', '2025-12-17 19:52:11'),
+(11, 'naziur', 'naziur@gmail.com', '30fa864f0bfa3a355853a921e2c769eb', '3', '2025-12-17 19:52:11');
 
 --
 -- Indexes for dumped tables
@@ -227,6 +254,12 @@ ALTER TABLE `bookings`
 --
 ALTER TABLE `cars`
   ADD PRIMARY KEY (`car_id`);
+
+--
+-- Indexes for table `contact`
+--
+ALTER TABLE `contact`
+  ADD PRIMARY KEY (`contact_id`);
 
 --
 -- Indexes for table `customers`
@@ -295,7 +328,13 @@ ALTER TABLE `bookings`
 -- AUTO_INCREMENT for table `cars`
 --
 ALTER TABLE `cars`
-  MODIFY `car_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `car_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `contact`
+--
+ALTER TABLE `contact`
+  MODIFY `contact_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `customers`
@@ -331,7 +370,7 @@ ALTER TABLE `testimonials`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Constraints for dumped tables
