@@ -71,7 +71,7 @@ if(!isset($_SESSION['admin_login'])){
                   $tmp_name = $_FILES['photo']['tmp_name'];
                   $path =  "img/".$p_name ;
                   move_uploaded_file($tmp_name, $path);
-                  $sql = "INSERT INTO cars VALUES(NULL, '$name', '$brand', '$type', '$model_year', '$reg_no', '$price', '$status', '$path')";
+                  $sql = "INSERT INTO cars VALUES(NULL, '$name', '$type', '$model_year', '$reg_no', '$price', '$status', '$path')";
                   $db->query($sql);
                   if($db->affected_rows){
                     echo '<div class="alert alert-success">Successfully Submitted</div>';
@@ -88,10 +88,7 @@ if(!isset($_SESSION['admin_login'])){
                 <label for="input-id" class="col-sm-2">Car Name</label>
                 <input type="text" name="name" class="form-control" placeholder="Enter your car name">
               </div>
-                <div class="formgroup">
-                <label for="input-id" class="col-sm-2">Brand</label>
-                <input type="text" name="brand" class="form-control" placeholder="Enter your car price">
-              </div>
+                
                 <div class="formgroup">
                 <label for="input-id" class="col-sm-2">type</label>
                 <input type="text" name="type" class="form-control" placeholder="Enter your car price">
