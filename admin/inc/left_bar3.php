@@ -49,75 +49,8 @@
 
 
                     </ul>
-                <!-- </li>
-                <li class="nav-item ">
-                    <a href="#" class="nav-link ">
-                        <i class="fas fa-user"></i>
-                        <p>My Bookings<i class="right fas fa-angle-left"></i></p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="employees.php" class="nav-link ">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>All Employees</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="add_new_car.php" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Add New Employee</p>
-                            </a>
-                        </li>
-
-                    </ul>
-                </li>
-                <li class="nav-item ">
-                    <a href="#" class="nav-link ">
-                        <i class="fas fa-user"></i>
-                        <p>
-                            Client
-                            <i class="right fas fa-angle-left"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="client.php" class="nav-link ">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>All Client</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-table"></i>
-                        <p>
-                            Tables
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="pages/tables/simple.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Contact Tables</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="employees.php" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Testimonial Table</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/tables/jsgrid.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>CU</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li><a href="<?php echo $admin_url; ?>admin/logout.php" class="btn btn-primary btn-md float-right">logout</a></li> -->
+                
+                <li><a href="logout.php" class="btn btn-primary btn-md float-right">logout</a></li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

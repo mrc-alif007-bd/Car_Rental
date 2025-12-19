@@ -47,6 +47,7 @@ session_start();
                     $_SESSION['cleint_login'] = $email;
                     $_SESSION['email'] = $email ;
                     $_SESSION['name'] = $row['name'] ;
+                    $_SESSION['user_id'] = $row['user_id'] ;
                     header("Location:dashboard_cleint.php");
                 }
             } else {
@@ -122,7 +123,7 @@ session_start();
                 <a href="forgot-password.html">I forgot my password</a>
             </p>
             <p class="mb-0">
-                <a href="register.html" class="text-center">Register a new membership</a>
+                <a href="register.php" class="text-center">Register a new membership</a>
             </p>
         </div>
         <!-- /.card-body -->

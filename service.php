@@ -1,6 +1,6 @@
-<?php 
+<?php
 if (session_status() == PHP_SESSION_NONE) {
-    session_start();
+	session_start();
 }
 ?>
 ?>
@@ -123,17 +123,18 @@ if (session_status() == PHP_SESSION_NONE) {
 					?>
 						<div class="col-md-4 col-sm-6">
 							<div class="choose-us-box">
-								<img src="admin/<?php echo $row->image ?>"  class="img-responsive">
+								<img src="admin/<?php echo $row->image ?>" class="img-responsive">
 								<h4><?php echo $row->car_name ?></h4>
 								<p><?php echo $row->status ?></p>
 								<h4><?php echo $row->rent_price ?></h4>
-								<a 
-   href="online_booking.php?name=<?php echo $row->car_name ?>&id=<?php echo $row->car_id ?>&price=<?php echo $row->rent_price ?>" 
-   class="btn btn-warning"
-   onclick="<?php if(!isset($_SESSION['cleint_login'])) { echo "alert('Please Login First'); return false;"; } ?>"
->
-   Book Now
-</a>
+								<a
+									href="online_booking.php?name=<?php echo $row->car_name ?>&id=<?php echo $row->car_id ?>&price=<?php echo $row->rent_price ?>"
+									class="btn btn-warning"
+									onclick="<?php if (!isset($_SESSION['cleint_login'])) {
+													echo "alert('Please Login First'); return false;";
+												} ?>">
+									Book Now
+								</a>
 							</div>
 						</div>
 					<?php

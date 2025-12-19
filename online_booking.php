@@ -1,4 +1,3 @@
-
 <?php include("inc/db_config.php");
 $car_name = $_REQUEST['name'];
 $car_id = $_REQUEST['id'];
@@ -119,19 +118,19 @@ session_start(); ?>
 					</div>
 
 					<!-- Online Booking Form -->
-					 
+
 					<?php
 					if (isset($_POST['submit'])) {
 						extract($_POST);
 						$c_name = $_SESSION['name'];
-						$c_email = $_SESSION['email'];
-						$sql = "INSERT INTO bookings VALUES(NULL, '$car_id', '$car_name', '$pick_date', '$drop_date', '$car_price', 'Pendding', NULL)";
-						$record = $db->query($sql); 
-                        echo '<div class="alert alert-success text-center" style="margin-top:20px;">
+						$c_id = $_SESSION['user_id'];
+						$sql = "INSERT INTO bookings VALUES(NULL, '$car_id', '$car_name', '$c_name', '$c_id', '$pick_date', '$drop_date', '$car_price', 'Pendding', NULL)";
+						$record = $db->query($sql);
+						echo '<div class="alert alert-success text-center" style="margin-top:20px;">
             <i class="fa fa-check-circle"></i> <strong>Success!</strong> Booking Successful.
           </div>';
 					}
-					
+
 					?>
 
 					<form class="online-booking-form row" method="post">
@@ -177,14 +176,15 @@ session_start(); ?>
 							</select>
 						</div>
 
-						<div class="form-group col-md-6">
+						<div class="form-group col-md-12">
 							<button type="submit" name="submit" class="btn btn-primary">Book</button>
+							<div class="form-group col-md-6">
+							
+							<button type="button" ><a href="admin/dashboard_cleint.php">go to your dashboard</a></button>
+						</div>
 						</div>
 
-						<div class="form-group col-md-12">
-							<input type="checkbox" required>
-							<span>I agree to the Terms & Conditions</span>
-						</div>
+						
 					</form>
 				</div>
 
@@ -248,47 +248,6 @@ session_start(); ?>
 							</div>
 						</div>
 					</aside><!-- Recent Post/- -->
-					<!-- Widget Tags -->
-					<aside class="widget widget-tags">
-						<div class="widget-title">
-							<h3>popular tags</h3>
-						</div>
-						<div class="tags-content">
-							<a href="#" title="Amazing">Amazing</a>
-							<a href="#" title="Envato">Envato</a>
-							<a href="#" title="Themes">Themes</a>
-							<a href="#" title="Clean">Clean</a>
-							<a href="#" title="Responsiveness">Responsiveness</a>
-							<a href="#" title="SEO">SEO</a>
-							<a href="#" title="Mobile">Mobile</a>
-							<a href="#" title="IOS">IOS</a>
-							<a href="#" title="Flat">Flat</a>
-							<a href="#" title="Design">Design</a>
-						</div>
-					</aside><!-- Widget Tags/- -->
-					<!-- Widget Flicker -->
-					<aside class="widget widget-flicker">
-						<div class="widget-title">
-							<h3>flickr stream</h3>
-						</div>
-						<div class="flickr-item">
-							<script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=6&amp;display=random&amp;size=s&amp;layout=x&amp;source=user&amp;user=121438098@N03"></script>
-						</div>
-					</aside><!-- Widget Flicker/- -->
-					<!-- Widget Archives -->
-					<aside class="widget widget-archives">
-						<div class="widget-title">
-							<h3>archives</h3>
-						</div>
-						<ul class="archives-contnet">
-							<li><a href="#"><span>11</span>March 2015</a></li>
-							<li><a href="#"><span>36</span>January 2015</a></li>
-							<li><a href="#"><span>18</span>December 2015</a></li>
-							<li><a href="#"><span>11</span>September 2015</a></li>
-							<li><a href="#"><span>20</span>August 2014</a></li>
-							<li><a href="#"><span>12</span>July 2014</a></li>
-						</ul>
-					</aside><!-- Widget Archives/- -->
 				</div><!-- Widget Area/- -->
 			</div><!-- Container/- -->
 			<div class="section-padding"></div>

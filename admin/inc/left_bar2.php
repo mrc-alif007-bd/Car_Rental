@@ -126,7 +126,7 @@
                         </li>
                     </ul>
                 </li>
-                <li><a href="<?php echo $admin_url; ?>admin/logout.php" class="btn btn-primary btn-md float-right">logout</a></li>
+                <li><a href="logout.php" class="btn btn-primary btn-md float-right">logout</a></li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->
