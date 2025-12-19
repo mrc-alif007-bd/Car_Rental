@@ -99,6 +99,47 @@
 			</div>
 		</div><!-- Banner Section /- -->
 
+		<!-- Car List -->
+		<div class="container-fluid no-padding car-list">
+			<div class="section-padding"></div>
+
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<h3>Our Fleet</h3>
+						<h2>Available Cars</h2>
+						<img src="images/icon/title-separator.png" alt="separator">
+					</div>
+				</div>
+
+				<div class="row" style="margin-top:30px;">
+
+					<!-- Car 1 -->
+					<?php
+					$sql = "SELECT * FROM cars ORDER BY car_id DESC";
+					$rawData = $db->query($sql);
+					while ($row = $rawData->fetch_object()):
+					?>
+						<div class="col-md-4 col-sm-6">
+							<div class="choose-us-box">
+								<img src="admin/<?php echo $row->image ?>"  class="img-responsive">
+								<h4><?php echo $row->car_name ?></h4>
+								<p><?php echo $row->status ?></p>
+								<h4><?php echo $row->rent_price ?></h4>
+								<a href="#" class="btn btn-warning">Book Now</a>
+							</div>
+						</div>
+					<?php
+					endwhile;
+					$db->close();
+					?>
+				</div>
+			</div>
+
+			<div class="section-padding"></div>
+		</div>
+		<!-- Car List /- -->
+
 		<!-- What We Do -->
 		<div class="container-fluid no-padding what-we-do">
 			<div class="section-padding"></div>
@@ -136,46 +177,7 @@
 			<div class="section-padding"></div>
 		</div><!-- What We Do/- -->
 
-		<!-- Car List -->
-		<div class="container-fluid no-padding car-list">
-			<div class="section-padding"></div>
 
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12 text-center">
-						<h3>Our Fleet</h3>
-						<h2>Available Cars</h2>
-						<img src="images/icon/title-separator.png" alt="separator">
-					</div>
-				</div>
-
-				<div class="row" style="margin-top:30px;">
-
-					<!-- Car 1 -->
-					  <?php
-            $sql = "SELECT * FROM cars ORDER BY car_id DESC";
-            $rawData = $db->query($sql);
-            while ($row = $rawData->fetch_object()):
-            ?>
-					<div class="col-md-4 col-sm-6">
-						<div class="choose-us-box">
-							<img src="admin/<?php echo $row->image ?>" alt="Sedan" class="img-responsive">
-							<h4>car name</h4>
-							<p>lorem ipsum</p>
-							<h4>rent price</h4>
-							<a href="#" class="btn btn-warning">Book Now</a>
-						</div>
-					</div>
-					<?php
-            endwhile;
-            $db->close();
-            ?>
-				</div>
-			</div>
-
-			<div class="section-padding"></div>
-		</div>
-		<!-- Car List /- -->
 
 
 

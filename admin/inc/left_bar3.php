@@ -1,4 +1,3 @@
-
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="<?php echo $admin_url ?>dashboard_admin.php" class="brand-link">
@@ -11,7 +10,7 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="info">
-                <a href="#" class="d-block"><?php  echo ($_SESSION['name']) ? $_SESSION['name'] :""; ?></a>
+                <a href="#" class="d-block"><?php echo ($_SESSION['name']) ? $_SESSION['name'] : ""; ?></a>
             </div>
         </div>
 
@@ -36,33 +35,25 @@
                     <a href="#" class="nav-link ">
                         <i class="fas fa-user"></i>
                         <p>
-                             Cars
+                            Cars
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="<?php  echo $admin_url ?>students/index.php" class="nav-link ">
+                            <a href="" class="nav-link ">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>All Cars</p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="add_new_car.php" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Add New Car</p>
-                            </a>
-                        </li>
+
 
                     </ul>
-                </li>
+                <!-- </li>
                 <li class="nav-item ">
                     <a href="#" class="nav-link ">
                         <i class="fas fa-user"></i>
-                        <p>
-                             Employees
-                            <i class="right fas fa-angle-left"></i>
-                        </p>
+                        <p>My Bookings<i class="right fas fa-angle-left"></i></p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
@@ -84,7 +75,7 @@
                     <a href="#" class="nav-link ">
                         <i class="fas fa-user"></i>
                         <p>
-                             Client
+                            Client
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
@@ -126,7 +117,7 @@
                         </li>
                     </ul>
                 </li>
-                <li><a href="<?php echo $admin_url; ?>admin/logout.php" class="btn btn-primary btn-md float-right">logout</a></li>
+                <li><a href="<?php echo $admin_url; ?>admin/logout.php" class="btn btn-primary btn-md float-right">logout</a></li> -->
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

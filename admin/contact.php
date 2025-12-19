@@ -63,7 +63,7 @@ if(!isset($_SESSION['admin_login'])){
 
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Employee Table</h3>
+                <h3 class="card-title">Contact Table</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -73,23 +73,25 @@ if(!isset($_SESSION['admin_login'])){
                     <th>User id</th>
                     <th>Name</th>
                     <th>Email</th>
-                    <th>Role</th>
-                    <th>Created at</th>
+                    <th>Phone</th>
+                    <th>Subject</th>
+                    <th>Message</th>
                     <th>Action</th>
                   </tr>
                   </thead>
                   <tbody>
                     <?php 
-                    $sql = "SELECT `user_id`,`name`,`email`,`role`,`created_at` FROM `users` WHERE `role`= 3";
+                    $sql = "SELECT * FROM contact ORDER BY contact_id DESC";
                      $rawData = $db->query($sql);
                   while($row = $rawData->fetch_object()): 
                     ?>
                   <tr>
-                    <td><?php echo $row->user_id; ?></td>
-                    <td><?php echo $row->name; ?></td>
-                    <td><?php echo $row->email; ?></td>
-                    <td><?php echo $row->role; ?></td>
-                    <td><?php echo $row->created_at; ?></td>
+                    <td><?php echo $row->contact_id; ?></td>
+                    <td><?php echo $row->u_name; ?></td>
+                    <td><?php echo $row->u_email; ?></td>
+                    <td><?php echo $row->phone; ?></td>
+                    <td><?php echo $row->subject; ?></td>
+                    <td><?php echo $row->message; ?></td>
                     <td></td>
                   </tr>
                    <?php 

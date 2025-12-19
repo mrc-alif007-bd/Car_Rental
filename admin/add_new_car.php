@@ -71,7 +71,7 @@ if(!isset($_SESSION['admin_login'])){
                   $tmp_name = $_FILES['photo']['tmp_name'];
                   $path =  "img/".$p_name ;
                   move_uploaded_file($tmp_name, $path);
-                  $sql = "INSERT INTO cars VALUES(NULL, '$name', '$type', '$model_year', '$reg_no', '$price', '$status', '$path')";
+                  $sql = "INSERT INTO cars VALUES(NULL, '$name', '$type', '$model_year', '$reg_no', '$price', '$status', '$path','$details')";
                   $db->query($sql);
                   if($db->affected_rows){
                     echo '<div class="alert alert-success">Successfully Submitted</div>';
