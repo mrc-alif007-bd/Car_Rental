@@ -1,10 +1,11 @@
+<?php 
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+?>
+?>
 <?php include("inc/db_config.php"); ?>
 <!DOCTYPE html>
-<!--[if lt IE 7 ]> <html class="ie6"> <![endif]-->
-<!--[if IE 7 ]>    <html class="ie7"> <![endif]-->
-<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
-<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!-->
 <html class=""><!--<![endif]-->
 
 <head>
@@ -116,7 +117,7 @@
 
 					<!-- Car 1 -->
 					<?php
-					$sql = "SELECT * FROM cars ORDER BY car_id DESC";
+					$sql = "SELECT * FROM cars WHERE status = 'available' ORDER BY car_id DESC";
 					$rawData = $db->query($sql);
 					while ($row = $rawData->fetch_object()):
 					?>
@@ -126,7 +127,13 @@
 								<h4><?php echo $row->car_name ?></h4>
 								<p><?php echo $row->status ?></p>
 								<h4><?php echo $row->rent_price ?></h4>
-								<a href="online_booking.php?name=<?php echo $row->car_name ?>&id=<?php echo $row->car_id ?>&price=<?php echo $row->rent_price ?>" class="btn btn-warning">Book Now</a>
+								<a 
+   href="online_booking.php?name=<?php echo $row->car_name ?>&id=<?php echo $row->car_id ?>&price=<?php echo $row->rent_price ?>" 
+   class="btn btn-warning"
+   onclick="<?php if(!isset($_SESSION['cleint_login'])) { echo "alert('Please Login First'); return false;"; } ?>"
+>
+   Book Now
+</a>
 							</div>
 						</div>
 					<?php

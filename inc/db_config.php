@@ -7,4 +7,4 @@
 //  if ($db->connect_error) {
 //     die("Connection failed: " . $db->connect_error);
 //  }
-$admin_url = "http://localhost /Mahfuzur/Car_rental/";
+// $admin_url = "http://localhost /Mahfuzur/Car_rental/";

@@ -1,3 +1,4 @@
+
 <?php include("inc/db_config.php");
 $car_name = $_REQUEST['name'];
 $car_id = $_REQUEST['id'];
@@ -118,17 +119,19 @@ session_start(); ?>
 					</div>
 
 					<!-- Online Booking Form -->
+					 
 					<?php
 					if (isset($_POST['submit'])) {
 						extract($_POST);
 						$c_name = $_SESSION['name'];
 						$c_email = $_SESSION['email'];
 						$sql = "INSERT INTO bookings VALUES(NULL, '$car_id', '$car_name', '$pick_date', '$drop_date', '$car_price', 'Pendding', NULL)";
-						$record = $db->query($sql);
-						if($record->affected_rows){
-							echo "Successfull";
-						}
+						$record = $db->query($sql); 
+                        echo '<div class="alert alert-success text-center" style="margin-top:20px;">
+            <i class="fa fa-check-circle"></i> <strong>Success!</strong> Booking Successful.
+          </div>';
 					}
+					
 					?>
 
 					<form class="online-booking-form row" method="post">
