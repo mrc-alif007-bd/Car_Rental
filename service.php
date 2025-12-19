@@ -1,4 +1,4 @@
-<?php include("inc/db_config.php") ?>
+<?php include("inc/db_config.php"); ?>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]> <html class="ie6"> <![endif]-->
 <!--[if IE 7 ]>    <html class="ie7"> <![endif]-->
@@ -126,7 +126,7 @@
 								<h4><?php echo $row->car_name ?></h4>
 								<p><?php echo $row->status ?></p>
 								<h4><?php echo $row->rent_price ?></h4>
-								<a href="#" class="btn btn-warning">Book Now</a>
+								<a href="online_booking.php?name=<?php echo $row->car_name ?>&id=<?php echo $row->car_id ?>&price=<?php echo $row->rent_price ?>" class="btn btn-warning">Book Now</a>
 							</div>
 						</div>
 					<?php

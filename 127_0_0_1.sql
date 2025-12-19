@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 18, 2025 at 02:35 AM
+-- Generation Time: Dec 19, 2025 at 11:48 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `car_rental`
 --
+CREATE DATABASE IF NOT EXISTS `car_rental` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `car_rental`;
 
 -- --------------------------------------------------------
 
@@ -59,16 +61,22 @@ CREATE TABLE `advance_payments` (
 
 CREATE TABLE `bookings` (
   `booking_id` int(11) NOT NULL,
-  `customer_id` int(11) DEFAULT NULL,
   `car_id` int(11) DEFAULT NULL,
+  `car_name` varchar(30) DEFAULT NULL,
   `start_date` date DEFAULT NULL,
   `end_date` date DEFAULT NULL,
   `total_amount` decimal(10,2) DEFAULT NULL,
   `booking_status` varchar(50) DEFAULT NULL,
-  `approved_by` int(11) DEFAULT NULL,
-  `handled_by` int(11) DEFAULT NULL,
-  `created_at` datetime DEFAULT NULL
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `bookings`
+--
+
+INSERT INTO `bookings` (`booking_id`, `car_id`, `car_name`, `start_date`, `end_date`, `total_amount`, `booking_status`, `created_at`) VALUES
+(1, 23, 'Toyota', '2025-12-26', '2025-12-24', 6500.00, 'Pendding', '2025-12-19 09:14:20'),
+(2, 23, 'Toyota', '2025-12-26', '2025-12-24', 6500.00, 'Pendding', '2025-12-19 09:14:29');
 
 -- --------------------------------------------------------
 
@@ -79,32 +87,29 @@ CREATE TABLE `bookings` (
 CREATE TABLE `cars` (
   `car_id` int(11) NOT NULL,
   `car_name` varchar(120) DEFAULT NULL,
-  `brand` varchar(120) DEFAULT NULL,
   `type` varchar(100) DEFAULT NULL,
   `model_year` int(11) DEFAULT NULL,
   `registration_no` varchar(50) DEFAULT NULL,
   `rent_price` decimal(10,2) DEFAULT NULL,
   `status` varchar(50) DEFAULT NULL,
-  `image` varchar(255) DEFAULT NULL
+  `image` varchar(255) DEFAULT NULL,
+  `details` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `cars`
 --
 
-INSERT INTO `cars` (`car_id`, `car_name`, `brand`, `type`, `model_year`, `registration_no`, `rent_price`, `status`, `image`) VALUES
-(1, 'BMW', 'toyota', 'mercedes', 2550, '48749067', 93488.00, 'not good', NULL),
-(2, 'BMW', 'toyota', 'mercedes', 2550, '0012455', 5000.00, 'dur', NULL),
-(3, 'php', 'js', 'phython', 2017, '51222377455', 5000.00, 'dur', NULL),
-(4, 'BMW', 'toyota', 'mercedes', 2550, '48749067', 7000.00, 'not good', NULL),
-(5, '', 'toyota', 'mercedes', 2550, '0012455', 93488.00, 'ok', 'images/'),
-(6, '', 'js', 'phython', 2017, '48749067', 93488.00, 'not good', 'images/'),
-(7, '', 'js', 'phython', 2017, '48749067', 93488.00, 'not good', 'images/'),
-(8, 'car_01.jpeg', 'js', 'phython', 2550, '51222377455', 93488.00, 'not good', 'images/car_01.jpeg'),
-(9, '', '', '', 0, '', 0.00, '', 'images/'),
-(10, 'car_01.jpeg', 'bmw', 'jeep', 2017, '51222377455', 5000.00, 'ewhruwrygu', 'images/car_01.jpeg'),
-(11, 'BMW', 'js', 'suv', 2016, '0987654321', 123456.00, 'not good', 'images/car_01.jpeg'),
-(12, 'BMW', 'bmw', 'suv', 2016, '48749067', 7000.00, 'ok', 'images/car_02.1.jfif');
+INSERT INTO `cars` (`car_id`, `car_name`, `type`, `model_year`, `registration_no`, `rent_price`, `status`, `image`, `details`) VALUES
+(13, 'Quincy Wolf', 'Sit ut illum maxime', 1996, 'Ab illum qui volupt', 7500.00, 'Ut obcaecati atque l', 'img/car_03.jfif', 'lorem ipsum'),
+(14, 'BMW', 'suv', 2016, '48749067', 5500.00, 'ok', 'img/car_07.jfif', 'lorem ipsum'),
+(15, 'Mercedes', 'suv', 2017, '87976526', 7000.00, 'ok', 'img/car_10.jfif', 'lorem ipsum'),
+(16, 'Toyota', 'suv', 2018, '57364512', 6000.00, 'ok', 'img/car_03.01.jfif', 'lorem ipsum'),
+(18, 'BMW', 'suv', 2017, '58658655', 8000.00, 'ok', 'img/car_06.jfif', 'lorem ipsum'),
+(19, 'BMW', 'suv', 2017, '51232377', 8500.00, 'ok', 'img/car_08.jfif', 'lorem ipsum'),
+(21, 'Mercedes', 'suv', 2020, '51234377', 7000.00, 'ok', 'img/car_07.jfif', 'lorem ipsum'),
+(22, 'Toyota', 'suv', 2020, '76094321', 7500.00, 'ok', 'img/car_06.jfif', 'lorem ipsum'),
+(23, 'Toyota', 'suv', 2019, '78642356', 6500.00, 'ok', 'img/car_10.jfif', 'lorem ipsum');
 
 -- --------------------------------------------------------
 
@@ -118,9 +123,16 @@ CREATE TABLE `contact` (
   `u_email` varchar(100) NOT NULL,
   `phone` varchar(20) NOT NULL,
   `subject` varchar(50) NOT NULL,
-  `message` varchar(400) NOT NULL,
-  `created_at` date NOT NULL DEFAULT current_timestamp()
+  `message` varchar(400) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `contact`
+--
+
+INSERT INTO `contact` (`contact_id`, `u_name`, `u_email`, `phone`, `subject`, `message`) VALUES
+(1, 'Cassandra Meyer', 'tasa@mailinator.com', '+1 (248) 258-2586', 'Voluptas illo placea', 'Est excepteur adipi'),
+(2, 'Colette Chapman', 'nugo@mailinator.com', '+1 (336) 503-5621', 'Mollitia quia vero a', 'Vitae repudiandae au');
 
 -- --------------------------------------------------------
 
@@ -183,11 +195,20 @@ CREATE TABLE `payment_methods` (
 
 CREATE TABLE `testimonials` (
   `testimonial_id` int(11) NOT NULL,
-  `customer_id` int(11) DEFAULT NULL,
-  `message` varchar(50) DEFAULT NULL,
-  `rating` int(11) DEFAULT NULL,
-  `created_at` datetime DEFAULT NULL
+  `u_name` varchar(50) NOT NULL,
+  `message` varchar(350) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `testimonials`
+--
+
+INSERT INTO `testimonials` (`testimonial_id`, `u_name`, `message`) VALUES
+(1, 'Dhfv Bmsdh', 'nfhdkd fvj jcbcm  dx cbdmc  jdvkje  jrbfuf  jf  jd fjfkfkjdbd vjdnff fjfjfkghrobh nfk nvhfjc dfjgoe.  bhvvjvkc gvj mfbjm'),
+(2, ' Bmsdh Xdhdj', 'vhasfeugd ufebh  ituwerv fhdkd fvj jcbcm  dx cbdmc  jdvkje  jrbfuf  jf  jd fjfkfkjdbd vjdnff ghrobh nfk nvhfjc dfjgoe.  bhvvjvkc gvj mfbjm'),
+(3, 'Vxhdb', 'hoifenm viyfn mv wrn fyufasjkfdk ewrit6wfgsdg  ytwejhkdmvna x yfe vuf dvygwe '),
+(4, 'Fdjhg Hxdhdj', 'fsgdk, gcxft  tdterf tertf st dstergf  fyeiru fd rtgfd  ugfkdjyfu g fkkjykufk '),
+(5, 'Ghjg Fsfb', 'jkf fsgdkjy wjd tekt cdjt ehtwbeve ebvn bg nynyunbetgjjn e nk gcxft  tdterf tertf st dstergf  fyeiru fd rtgfd  ugfkdjyfu g fkkjykufk ');
 
 -- --------------------------------------------------------
 
@@ -243,11 +264,7 @@ ALTER TABLE `advance_payments`
 -- Indexes for table `bookings`
 --
 ALTER TABLE `bookings`
-  ADD PRIMARY KEY (`booking_id`),
-  ADD KEY `customer_id` (`customer_id`),
-  ADD KEY `car_id` (`car_id`),
-  ADD KEY `approved_by` (`approved_by`),
-  ADD KEY `handled_by` (`handled_by`);
+  ADD PRIMARY KEY (`booking_id`);
 
 --
 -- Indexes for table `cars`
@@ -293,8 +310,7 @@ ALTER TABLE `payment_methods`
 -- Indexes for table `testimonials`
 --
 ALTER TABLE `testimonials`
-  ADD PRIMARY KEY (`testimonial_id`),
-  ADD KEY `customer_id` (`customer_id`);
+  ADD PRIMARY KEY (`testimonial_id`);
 
 --
 -- Indexes for table `users`
@@ -322,19 +338,19 @@ ALTER TABLE `advance_payments`
 -- AUTO_INCREMENT for table `bookings`
 --
 ALTER TABLE `bookings`
-  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `cars`
 --
 ALTER TABLE `cars`
-  MODIFY `car_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `car_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `contact_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `contact_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `customers`
@@ -364,64 +380,13 @@ ALTER TABLE `payment_methods`
 -- AUTO_INCREMENT for table `testimonials`
 --
 ALTER TABLE `testimonials`
-  MODIFY `testimonial_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `testimonial_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `admin`
---
-ALTER TABLE `admin`
-  ADD CONSTRAINT `admin_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`);
-
---
--- Constraints for table `advance_payments`
---
-ALTER TABLE `advance_payments`
-  ADD CONSTRAINT `advance_payments_ibfk_1` FOREIGN KEY (`booking_id`) REFERENCES `bookings` (`booking_id`),
-  ADD CONSTRAINT `advance_payments_ibfk_2` FOREIGN KEY (`method_id`) REFERENCES `payment_methods` (`method_id`);
-
---
--- Constraints for table `bookings`
---
-ALTER TABLE `bookings`
-  ADD CONSTRAINT `bookings_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`customer_id`),
-  ADD CONSTRAINT `bookings_ibfk_2` FOREIGN KEY (`car_id`) REFERENCES `cars` (`car_id`),
-  ADD CONSTRAINT `bookings_ibfk_3` FOREIGN KEY (`approved_by`) REFERENCES `admin` (`admin_id`),
-  ADD CONSTRAINT `bookings_ibfk_4` FOREIGN KEY (`handled_by`) REFERENCES `employees` (`employee_id`);
-
---
--- Constraints for table `customers`
---
-ALTER TABLE `customers`
-  ADD CONSTRAINT `customers_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`);
-
---
--- Constraints for table `employees`
---
-ALTER TABLE `employees`
-  ADD CONSTRAINT `employees_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`);
-
---
--- Constraints for table `payments`
---
-ALTER TABLE `payments`
-  ADD CONSTRAINT `payments_ibfk_1` FOREIGN KEY (`booking_id`) REFERENCES `bookings` (`booking_id`),
-  ADD CONSTRAINT `payments_ibfk_2` FOREIGN KEY (`method_id`) REFERENCES `payment_methods` (`method_id`);
-
---
--- Constraints for table `testimonials`
---
-ALTER TABLE `testimonials`
-  ADD CONSTRAINT `testimonials_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`customer_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

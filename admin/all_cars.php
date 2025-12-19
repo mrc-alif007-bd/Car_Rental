@@ -98,7 +98,7 @@ if(!isset($_SESSION['admin_login'])){
                     <td><?php echo $row->status; ?></td>
                     <td><?php echo $row->image; ?></td>
                     <td><?php echo $row->details; ?></td>
-                    <!-- <td><a href="car_delete.php?car_id=<?php //echo $row['car_id']; ?>" onclick="return confrim('aer you sure')">Delete</a></td> -->
+                    <td><a href="car_delete.php?car_id=<?php echo $row['car_id']; ?>">Delete</a></td>
                   </tr>
                    <?php 
                   endwhile;

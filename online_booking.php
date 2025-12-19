@@ -1,4 +1,8 @@
-<?php include("inc/db_config.php") ?>
+<?php include("inc/db_config.php");
+$car_name = $_REQUEST['name'];
+$car_id = $_REQUEST['id'];
+$car_price = $_REQUEST['price'];
+session_start(); ?>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]> <html class="ie6"> <![endif]-->
 <!--[if IE 7 ]>    <html class="ie7"> <![endif]-->
@@ -116,51 +120,13 @@
 					<!-- Online Booking Form -->
 					<?php
 					if (isset($_POST['submit'])) {
-
-						// Get form values safely
-						$c_type        = $_POST['c_type'] ?? '';
-						$n_passenger   = $_POST['n_passenger'] ?? '';
-						$pick_address  = $_POST['pick_address'] ?? '';
-						$drop_address  = $_POST['drop_address'] ?? '';
-						$pick_date     = $_POST['pick_date'] ?? '';
-						$pay_method    = $_POST['pay_method'] ?? '';
-
-						// Basic validation
-						if (
-							empty($c_type) || empty($n_passenger) || empty($pick_address) ||
-							empty($drop_address) || empty($pick_date) || empty($pay_method)
-						) {
-							echo '<div class="alert alert-danger"> All fields are required.</div>';
-						} else {
-
-							// Prepared statement (SAFE)
-							$stmt = $db->prepare(
-								"INSERT INTO on_booking 
-                (c_type, n_passenger, pick_address, drop_address, pick_date, pay_method)
-                VALUES (?, ?, ?, ?, ?, ?)"
-							);
-
-							if ($stmt) {
-								$stmt->bind_param(
-									"sissss",
-									$c_type,
-									$n_passenger,
-									$pick_address,
-									$drop_address,
-									$pick_date,
-									$pay_method
-								);
-
-								if ($stmt->execute()) {
-									echo '<div class="alert alert-success"> Booking submitted successfully!</div>';
-								} else {
-									echo '<div class="alert alert-danger"> Booking failed. Please try again.</div>';
-								}
-
-								$stmt->close();
-							} else {
-								echo '<div class="alert alert-danger"> Database error. Please try later.</div>';
-							}
+						extract($_POST);
+						$c_name = $_SESSION['name'];
+						$c_email = $_SESSION['email'];
+						$sql = "INSERT INTO bookings VALUES(NULL, '$car_id', '$car_name', '$pick_date', '$drop_date', '$car_price', 'Pendding', NULL)";
+						$record = $db->query($sql);
+						if($record->affected_rows){
+							echo "Successfull";
 						}
 					}
 					?>
@@ -170,23 +136,13 @@
 						<h4>Booking Details</h4>
 
 						<div class="form-group col-md-6">
-							<label>Car Type</label>
-							<select class="form-control" name="c_type" required>
-								<option value="">Select The Taxi Type</option>
-								<option value="SUV">SUV</option>
-								<option value="Sedan">Sedan</option>
-								<option value="Limousine">Limousine</option>
-							</select>
+							<label for="">NID Number</label><br>
+							<input type="text" class="form-control" name="nid" id="">
 						</div>
 
 						<div class="form-group col-md-6">
-							<label>Number Of Passengers</label>
-							<select class="form-control" name="n_passenger" required>
-								<option value="">Select Number of Passengers</option>
-								<option value="2">2</option>
-								<option value="3">3</option>
-								<option value="5">5</option>
-							</select>
+							<label>Drop Date</label><br>
+							<input type="date" class="form-control" name="drop_date" id="">
 						</div>
 
 						<div class="form-group col-md-6">
