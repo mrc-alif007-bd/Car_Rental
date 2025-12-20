@@ -73,6 +73,12 @@ session_start(); ?>
 	<!--[if lt IE 9]>
 		<script src="js/html5/respond.min.js"></script>
     <![endif]-->
+	<style>
+		.online-booking-form input, .online-booking-form .input-group select, .online-booking-form select, .online-booking-form textarea {
+
+    color: #000000ff !important;
+}
+	</style>
 </head>
 
 <body data-offset="200" data-spy="scroll" data-target=".ow-navigation">

@@ -1,7 +1,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="<?php echo $admin_url ?>dashboard_admin.php" class="brand-link">
-        <img src="<?php echo $admin_url ?>admin/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+    <a href="dashboard_admin.php" class="brand-link">
+        <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
         <span class="brand-text font-weight-light">Dashboard</span>
     </a>
 
@@ -25,6 +25,7 @@
                 </div>
             </div>
         </div>
+        
 
         <!-- Sidebar Menu -->
         <nav class="mt-2">
@@ -35,13 +36,33 @@
                     <a href="#" class="nav-link ">
                         <i class="fas fa-user"></i>
                         <p>
+                            Bookings
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="bookings.php" class="nav-link ">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>My Bookings</p>
+                            </a>
+                        </li>
+
+
+                    </ul>
+                
+                <li>
+                <li class="nav-item ">
+                    <a href="#" class="nav-link ">
+                        <i class="fas fa-user"></i>
+                        <p>
                             Cars
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="" class="nav-link ">
+                            <a href="../service.php" class="nav-link ">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>All Cars</p>
                             </a>
@@ -50,7 +71,8 @@
 
                     </ul>
                 
-                <li><a href="logout.php" class="btn btn-primary btn-md float-right">logout</a></li>
+                <li>
+                    <a href="logout.php" class="btn btn-primary btn-md float-right">logout</a></li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

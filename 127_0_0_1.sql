@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 19, 2025 at 07:27 PM
+-- Generation Time: Dec 20, 2025 at 01:07 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -77,12 +77,19 @@ CREATE TABLE `bookings` (
 --
 
 INSERT INTO `bookings` (`booking_id`, `car_id`, `car_name`, `client_name`, `client_id`, `start_date`, `end_date`, `total_amount`, `booking_status`, `created_at`) VALUES
-(27, 14, 'BMW', 'admin', 0, '1986-05-26', '1974-01-23', 5500.00, 'Pendding', '2025-12-19 14:46:18'),
+(27, 14, 'BMW', 'admin', 0, '1986-05-26', '1974-01-23', 5500.00, 'Confirm', '2025-12-19 14:46:18'),
 (28, 14, 'BMW', 'admin', 0, '1986-05-26', '1974-01-23', 5500.00, 'Pendding', '2025-12-19 14:51:11'),
 (29, 14, 'BMW', 'admin', 0, '2012-08-17', '2000-04-06', 5500.00, 'Pendding', '2025-12-19 14:51:40'),
 (30, 14, 'BMW', 'client', 4, '1998-11-15', '1975-03-03', 5500.00, 'Pendding', '2025-12-19 14:55:59'),
 (31, 19, 'BMW', 'client', 4, '1995-06-18', '2009-02-07', 8500.00, 'Pendding', '2025-12-19 15:03:36'),
-(32, 19, 'BMW', 'client', 4, '1987-05-13', '1988-06-30', 8500.00, 'Pendding', '2025-12-19 15:25:01');
+(32, 19, 'BMW', 'client', 4, '1987-05-13', '1988-06-30', 8500.00, 'Pendding', '2025-12-19 15:25:01'),
+(33, 24, 'Honda', 'client', 4, '1975-05-20', '1978-12-30', 8000.00, 'Pendding', '2025-12-20 03:32:46'),
+(34, 24, 'Honda', 'uhklhrreh', 13, '1984-06-21', '1977-07-30', 8000.00, 'Pendding', '2025-12-20 04:51:16'),
+(35, 14, 'BMW', 'uhklhrreh', 13, '1970-12-18', '1998-01-10', 5500.00, 'Pendding', '2025-12-20 04:52:55'),
+(36, 14, 'BMW', 'uhklhrreh', 13, '1983-03-05', '1971-02-02', 5500.00, 'Confirm', '2025-12-20 05:01:45'),
+(37, 24, 'Honda', 'uhklhrreh', 13, '2018-02-16', '2016-07-19', 8000.00, 'Pendding', '2025-12-20 05:05:47'),
+(38, 25, 'Toyota', 'uhklhrreh', 13, '1993-02-12', '2003-06-07', 7000.00, 'Pendding', '2025-12-20 05:14:02'),
+(39, 21, 'Mercedes', 'client', 4, '1970-09-06', '2013-04-04', 7000.00, 'Confirm', '2025-12-20 06:46:03');
 
 -- --------------------------------------------------------
 
@@ -245,7 +252,8 @@ INSERT INTO `users` (`user_id`, `name`, `email`, `password`, `role`, `created_at
 (9, 'arif', 'arif@gmail.com', '0ff6c3ace16359e41e37d40b8301d67f', '3', '2025-12-17 19:52:11'),
 (10, 'rakib', 'rakib@gmail.com', 'a36949228c1d9146cace6359d88968e8', '3', '2025-12-17 19:52:11'),
 (11, 'naziur', 'naziur@gmail.com', '30fa864f0bfa3a355853a921e2c769eb', '3', '2025-12-17 19:52:11'),
-(12, 'ftsgf', 'uysdyg@gmail.com', '957e74b3f7b149f515978100d4705622', '3', '2025-12-19 17:02:51');
+(12, 'ftsgf', 'uysdyg@gmail.com', '957e74b3f7b149f515978100d4705622', '3', '2025-12-19 17:02:51'),
+(13, 'uhklhrreh', 'toufik@gmail.com', 'ac5a6a0f1b1b95e1e30bfa983344d4c1', '3', '2025-12-20 03:35:21');
 
 --
 -- Indexes for dumped tables
@@ -344,7 +352,7 @@ ALTER TABLE `advance_payments`
 -- AUTO_INCREMENT for table `bookings`
 --
 ALTER TABLE `bookings`
-  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `cars`
@@ -392,7 +400,7 @@ ALTER TABLE `testimonials`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

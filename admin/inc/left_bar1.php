@@ -60,6 +60,23 @@
                     <a href="#" class="nav-link ">
                         <i class="fas fa-user"></i>
                         <p>
+                             Booking List
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="admin_bookings.php" class="nav-link ">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Bookings</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item ">
+                    <a href="#" class="nav-link ">
+                        <i class="fas fa-user"></i>
+                        <p>
                              Employees
                             <i class="right fas fa-angle-left"></i>
                         </p>
