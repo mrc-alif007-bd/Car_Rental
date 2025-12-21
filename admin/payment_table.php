@@ -1,6 +1,6 @@
 <?php 
 session_start(); 
-if(!isset($_SESSION['cleint_login'])){
+if(!isset($_SESSION['admin_login'])){
   header("Location:login.php");
 }
 ?>
@@ -30,7 +30,7 @@ if(!isset($_SESSION['cleint_login'])){
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-   <?php include_once("inc/left_bar3.php"); ?>
+   <?php include_once("inc/left_bar1.php"); ?>
 
   <!-- Main Sidebar Container --> 
 
@@ -63,22 +63,21 @@ if(!isset($_SESSION['cleint_login'])){
 
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Employee Table</h3>
+                <h3 class="card-title">Payment Table</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
+                    <th>Payment id</th>
                     <th>Booking id</th>
-                    <th>Car id</th>
-                    <th>car name</th>
-                    <th>client name</th>
                     <th>client id</th>
-                    <th>Start Date</th>
-                    <th>End Date</th>
-                    <th>Total Amount</th>                   
-                    <th>Booking status</th>
+                    <th>Car id</th>                       
+                    <th>Amount</th>                   
+                    <th>Acount Number</th>                   
+                    <th>Payment Method</th>                   
+                    <th>status</th>
                     <th>Creat At</th>
                     <th>Action</th>
                   </tr>
@@ -86,26 +85,24 @@ if(!isset($_SESSION['cleint_login'])){
                   <tbody>
                     <?php 
 
-                    $client_id = $_SESSION['user_id'];
                     
-                    $sql = "SELECT * FROM bookings WHERE client_id= '$client_id' " ;
+                    $sql = "SELECT * FROM payments ORDER BY payment_id " ;
                      $rawData = $db->query($sql);
                   while($row = $rawData->fetch_object()): 
                     ?>
                   <tr>
+                    <td><?php echo $row->payment_id; ?></td>
                     <td><?php echo $row->booking_id; ?></td>
-                    <td><?php echo $row->car_id; ?></td>
-                    <td><?php echo $row->car_name; ?></td>
-                    <td><?php echo $row->client_name; ?></td>
                     <td><?php echo $row->client_id; ?></td>
-                    <td><?php echo $row->start_date; ?></td>
-                    <td><?php echo $row->end_date; ?></td>
-                    <td><?php echo $row->total_amount; ?></td>
-                    <td><?php echo $row->booking_status; ?></td>
+                    <td><?php echo $row->car_id; ?></td>
+                    <td><?php echo $row->amount; ?></td>                   
+                    <td><?php echo $row->acon_num; ?></td>
+                    <td><?php echo $row->pay_method; ?></td>                   
+                    <td><?php echo $row->status; ?></td>
                     <td><?php echo $row->created_at; ?></td>
-                    <td style="text-align: center;"><?php echo $row->action; ?><a href="../payment_form.php?b_id=<?php echo $row->booking_id; ?>&car_id=<?php echo $row->car_id ?>&c_id=<?php echo $row->client_id ?>&amount=<?php echo $row->total_amount ?>">
+                    <td><a href="payment.php?id=<?php echo $row->payment_id; ?>">
                         
-                        <button type="button" class="btn btn-default">payment</button>
+                        <button type="button" class="btn btn-default">Confirm</button>
                         
                     </a></td>
                    

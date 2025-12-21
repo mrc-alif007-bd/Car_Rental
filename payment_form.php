@@ -1,7 +1,8 @@
 <?php include("inc/db_config.php");
-$car_name = $_REQUEST['name'];
-$car_id = $_REQUEST['id'];
-$car_price = $_REQUEST['price'];
+$car_id = $_REQUEST['car_id'];
+$booking_id = $_REQUEST['b_id'];
+$c_id = $_REQUEST['c_id'];
+$amount = $_REQUEST['amount'];
 session_start(); ?>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]> <html class="ie6"> <![endif]-->
@@ -128,48 +129,23 @@ session_start(); ?>
 					<?php
 					if (isset($_POST['submit'])) {
 						extract($_POST);
-						$c_name = $_SESSION['name'];
-						$c_id = $_SESSION['user_id'];
-						$sql = "INSERT INTO bookings VALUES(NULL, '$car_id', '$car_name', '$c_name', '$c_id', '$pick_date', '$drop_date', '$car_price', 'Pendding', NULL,'pay')";
+						
+						$sql = "INSERT INTO payments VALUES(NULL, '$booking_id', '$c_id ', '$car_id', '$amount', '$acon_num', '$pay_method', 'Processing', NULL)";
 						$record = $db->query($sql);
 						echo '<div class="alert alert-success text-center" style="margin-top:20px;">
-								<i class="fa fa-check-circle"></i> <strong>Success!</strong> Booking Successful.
-							</div>';
+            <i class="fa fa-check-circle"></i> <strong>Success!</strong> Booking Successful.
+          </div>';
 					}
 
 					?>
 
 					<form class="online-booking-form row" method="post">
 
-						<h4>Booking Details</h4>
+						<h4>Payment Table</h4>
 
 						<div class="form-group col-md-6">
-							<label for="">NID Number</label><br>
-							<input type="text" class="form-control" name="nid" id="">
-						</div>
-
-						<div class="form-group col-md-6">
-							<label>Drop Date</label><br>
-							<input type="date" class="form-control" name="drop_date" id="">
-						</div>
-
-						<div class="form-group col-md-6">
-							<label>Pickup Address</label>
-							<textarea name="pick_address" class="form-control" rows="5" required></textarea>
-						</div>
-
-						<div class="form-group col-md-6">
-							<label>Drop Address</label>
-							<textarea name="drop_address" class="form-control" rows="5" required></textarea>
-						</div>
-
-						<div class="form-group col-md-6">
-							<label>Pickup Date</label>
-							<input
-								class="form-control"
-								type="date"
-								name="pick_date"
-								required />
+							<label for="">Acount Number</label><br>
+							<input type="text" class="form-control" name="acon_num" id="">
 						</div>
 
 						<div class="form-group col-md-6">
@@ -183,10 +159,10 @@ session_start(); ?>
 						</div>
 
 						<div class="form-group col-md-12">
-							<button type="submit" name="submit" class="btn btn-primary">Book</button>
+							<button type="submit" name="submit" class="btn btn-primary">Pay</button>
 							<div class="form-group col-md-6">
 							
-							<button type="submit" ><a href="admin/dashboard_cleint.php">go to your dashboard</a></button>
+							<button type="button" ><a href="admin/dashboard_cleint.php">go to your dashboard</a></button>
 						</div>
 						</div>
 
