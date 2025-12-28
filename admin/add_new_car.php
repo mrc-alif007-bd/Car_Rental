@@ -71,7 +71,7 @@ if(!isset($_SESSION['admin_login'])){
                   $tmp_name = $_FILES['photo']['tmp_name'];
                   $path =  "img/".$p_name ;
                   move_uploaded_file($tmp_name, $path);
-                  $sql = "INSERT INTO cars VALUES(NULL, '$name', '$type', '$model_year', '$reg_no', '$price', '$status', '$path','$details')";
+                  $sql = "INSERT INTO cars VALUES(NULL, '$name', '$type', '$model_year', '$reg_no', '$price', '$status', '$path','$details', '$roll')";
                   $db->query($sql);
                   if($db->affected_rows){
                     echo '<div class="alert alert-success">Successfully Submitted</div>';
@@ -93,6 +93,17 @@ if(!isset($_SESSION['admin_login'])){
                 <label for="input-id" class="col-sm-2">type</label>
                 <input type="text" name="type" class="form-control" placeholder="Enter your car price">
               </div>
+                <div class="form-formgroup">
+                  <label for="input-id" class="col-sm-2">roll</label>
+                <select class="form-control" name="roll">
+                    <option value="" disabled selected>Login As</option>
+                    <option value="1">Jeep</option>
+                    <option value="2">suv</option>
+                    <option value="3">Micro Bus</option>
+                    <option value="4">Private car</option>
+
+                </select>
+            </div>
                 <div class="formgroup">
                 <label for="input-id" class="col-sm-2">model_year</label>
                 <input type="text" name="model_year" class="form-control" placeholder="Enter your car price">

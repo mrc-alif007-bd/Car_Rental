@@ -137,7 +137,7 @@ if (session_status() == PHP_SESSION_NONE) {
 				<div class="row" style="margin-top:30px;">
 
 					<?php
-					$sql = "SELECT * FROM cars WHERE status = 'available' ORDER BY car_id DESC";
+					$sql = "SELECT * FROM cars WHERE status = 'available' AND roll=2 ORDER BY car_id DESC  ";
 					$rawData = $db->query($sql);
 					while ($row = $rawData->fetch_object()):
 					?>
