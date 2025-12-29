@@ -52,18 +52,38 @@ if (session_status() == PHP_SESSION_NONE) {
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" type="text/css" href="css/shortcodes.css">
 
-	<!-- 🔧 GAP FIX (ONLY ADDITION) -->
+	<!--  IMAGE & CAR NAV FIX -->
 	<style>
+		/* Car box styling */
 		.car-list .choose-us-box {
 			height: 420px;
 			margin-bottom: 30px;
 			text-align: center;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
 		}
 
 		.car-list .choose-us-box img {
 			width: 100%;
-			height: 200px;
-			object-fit: cover;
+			max-height: 220px;
+			object-fit: cover; /* fill box without distortion */
+			margin-bottom: 15px;
+		}
+
+		/* Car category navbar center fix */
+		.car-list .navbar.ow-navigation {
+			text-align: center;
+		}
+
+		.car-list .navbar.ow-navigation .navbar-nav {
+			float: none;
+			display: inline-block;
+		}
+
+		.car-list .navbar.ow-navigation .navbar-nav li {
+			display: inline-block;
+			float: none;
 		}
 
 		.car-list .row::after {
@@ -71,11 +91,24 @@ if (session_status() == PHP_SESSION_NONE) {
 			display: block;
 			clear: both;
 		}
+
+		/* Responsive adjustment for mobile */
+		@media (max-width: 767px) {
+			.car-list .navbar.ow-navigation .navbar-nav {
+				display: block;
+				text-align: center;
+			}
+			.car-list .navbar.ow-navigation .navbar-nav li {
+				display: block;
+				margin: 5px 0;
+			}
+			.car-list .choose-us-box img {
+				height: 180px;
+			}
+		}
 	</style>
 
-	<!--[if lt IE 9]>
-		<script src="js/html5/respond.min.js"></script>
-    <![endif]-->
+	
 </head>
 
 <body data-offset="200" data-spy="scroll" data-target=".ow-navigation">
@@ -83,7 +116,7 @@ if (session_status() == PHP_SESSION_NONE) {
 	<div id="site-loader" class="load-complete">
 		<div class="loader">
 			<div class="loader-inner ball-clip-rotate">
-				<div></div>
+				
 			</div>
 		</div>
 	</div>
@@ -115,10 +148,11 @@ if (session_status() == PHP_SESSION_NONE) {
 						<img src="images/icon/title-separator.png" alt="separator">
 					</div>
 				</div>
-				<div class="col-md-8 container-fl ">
+
+				<!-- Car category navbar -->
+				<div class="col-md-12 " style="text-align: center;">
 					<nav class="navbar ow-navigation">
 						<div class="container">
-
 							<div id="navbar" class="navbar-collapse collapse">
 								<ul class="nav navbar-nav">
 									<li><a href="jeep.php">Jeep </a></li>
@@ -127,12 +161,9 @@ if (session_status() == PHP_SESSION_NONE) {
 									<li><a href="private_car.php">Private Car</a></li>
 								</ul>
 							</div>
-
 						</div>
 					</nav>
-
 				</div>
-
 
 				<div class="row" style="margin-top:30px;">
 
