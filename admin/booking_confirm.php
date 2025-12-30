@@ -6,6 +6,6 @@ $id=$_REQUEST['id'];
 
 $sql="UPDATE bookings SET booking_status = 'Confirm' WHERE bookings.booking_id = '$id'";
 $db->query($sql);
-header("location:admin_bookings.php");
+header("location:payment_table.php");
 
 ?>

@@ -70,41 +70,44 @@ if(!isset($_SESSION['admin_login'])){
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
-                    <th>Payment id</th>
                     <th>Booking id</th>
+                    <th>Car id</th>
+                    <th>client name</th>
                     <th>client id</th>
-                    <th>Car id</th>                       
-                    <th>Amount</th>                   
-                    <th>Acount Number</th>                   
-                    <th>Payment Method</th>                   
-                    <th>status</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Total Amount</th>                   
+                    <th>Booking status</th>
                     <th>Creat At</th>
                     <th>Action</th>
+                    
                   </tr>
                   </thead>
                   <tbody>
                     <?php 
 
+                    // $client_id = $_SESSION['user_id'];
                     
-                    $sql = "SELECT * FROM payments ORDER BY payment_id " ;
+                    $sql = "SELECT * FROM bookings WHERE booking_status ='paid' OR booking_status ='confirm' ORDER BY booking_id DESC" ;
                      $rawData = $db->query($sql);
                   while($row = $rawData->fetch_object()): 
                     ?>
                   <tr>
-                    <td><?php echo $row->payment_id; ?></td>
                     <td><?php echo $row->booking_id; ?></td>
-                    <td><?php echo $row->client_id; ?></td>
                     <td><?php echo $row->car_id; ?></td>
-                    <td><?php echo $row->amount; ?></td>                   
-                    <td><?php echo $row->acon_num; ?></td>
-                    <td><?php echo $row->pay_method; ?></td>                   
-                    <td><?php echo $row->status; ?></td>
+                    <td><?php echo $row->client_name; ?></td>
+                    <td><?php echo $row->client_id; ?></td>
+                    <td><?php echo $row->start_date; ?></td>
+                    <td><?php echo $row->end_date; ?></td>
+                    <td><?php echo $row->total_amount; ?></td>
+                    <td><?php echo $row->booking_status; ?></td>
                     <td><?php echo $row->created_at; ?></td>
-                    <td><a href="payment.php?id=<?php echo $row->payment_id; ?>">
+                    <td><a href="booking_confirm.php?id=<?php echo $row->booking_id; ?>">
                         
                         <button type="button" class="btn btn-default">Confirm</button>
                         
                     </a></td>
+                    
                    
                   </tr>
                    <?php 

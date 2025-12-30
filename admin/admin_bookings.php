@@ -79,13 +79,13 @@ if(!isset($_SESSION['admin_login'])){
                     <th>Total Amount</th>                   
                     <th>Booking status</th>
                     <th>Creat At</th>
-                    <th>Action</th>
+                    
                   </tr>
                   </thead>
                   <tbody>
                     <?php 
 
-                    $client_id = $_SESSION['user_id'];
+                    // $client_id = $_SESSION['user_id'];
                     
                     $sql = "SELECT * FROM bookings ORDER BY booking_id DESC" ;
                      $rawData = $db->query($sql);
@@ -101,11 +101,7 @@ if(!isset($_SESSION['admin_login'])){
                     <td><?php echo $row->total_amount; ?></td>
                     <td><?php echo $row->booking_status; ?></td>
                     <td><?php echo $row->created_at; ?></td>
-                    <td><a href="booking_confirm.php?id=<?php echo $row->booking_id; ?>">
-                        
-                        <button type="button" class="btn btn-default">Confirm</button>
-                        
-                    </a></td>
+                    
                    
                   </tr>
                    <?php 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 21, 2025 at 11:34 AM
+-- Generation Time: Dec 30, 2025 at 05:51 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `car_rental`
 --
+CREATE DATABASE IF NOT EXISTS `car_rental` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `car_rental`;
 
 -- --------------------------------------------------------
 
@@ -60,39 +62,31 @@ CREATE TABLE `advance_payments` (
 CREATE TABLE `bookings` (
   `booking_id` int(11) NOT NULL,
   `car_id` int(11) DEFAULT NULL,
-  `car_name` varchar(30) DEFAULT NULL,
   `client_name` varchar(150) NOT NULL,
   `client_id` int(11) NOT NULL,
+  `nid` int(32) NOT NULL,
   `start_date` date DEFAULT NULL,
   `end_date` date DEFAULT NULL,
+  `pick_address` varchar(100) NOT NULL,
+  `drop_address` varchar(100) NOT NULL,
   `total_amount` decimal(10,2) DEFAULT NULL,
   `booking_status` varchar(50) DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `action` varchar(50) DEFAULT NULL
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `bookings`
 --
 
-INSERT INTO `bookings` (`booking_id`, `car_id`, `car_name`, `client_name`, `client_id`, `start_date`, `end_date`, `total_amount`, `booking_status`, `created_at`, `action`) VALUES
-(27, 14, 'BMW', 'admin', 0, '1986-05-26', '1974-01-23', 5500.00, 'Confirm', '2025-12-19 14:46:18', ''),
-(28, 14, 'BMW', 'admin', 0, '1986-05-26', '1974-01-23', 5500.00, 'Pendding', '2025-12-19 14:51:11', ''),
-(29, 14, 'BMW', 'admin', 0, '2012-08-17', '2000-04-06', 5500.00, 'Pendding', '2025-12-19 14:51:40', ''),
-(30, 14, 'BMW', 'client', 4, '1998-11-15', '1975-03-03', 5500.00, 'Pendding', '2025-12-19 14:55:59', 'paid'),
-(31, 19, 'BMW', 'client', 4, '1995-06-18', '2009-02-07', 8500.00, 'Pendding', '2025-12-19 15:03:36', ''),
-(32, 19, 'BMW', 'client', 4, '1987-05-13', '1988-06-30', 8500.00, 'Pendding', '2025-12-19 15:25:01', ''),
-(33, 24, 'Honda', 'client', 4, '1975-05-20', '1978-12-30', 8000.00, 'Pendding', '2025-12-20 03:32:46', ''),
-(34, 24, 'Honda', 'uhklhrreh', 13, '1984-06-21', '1977-07-30', 8000.00, 'Pendding', '2025-12-20 04:51:16', ''),
-(35, 14, 'BMW', 'uhklhrreh', 13, '1970-12-18', '1998-01-10', 5500.00, 'Pendding', '2025-12-20 04:52:55', ''),
-(36, 14, 'BMW', 'uhklhrreh', 13, '1983-03-05', '1971-02-02', 5500.00, 'Confirm', '2025-12-20 05:01:45', ''),
-(37, 24, 'Honda', 'uhklhrreh', 13, '2018-02-16', '2016-07-19', 8000.00, 'Pendding', '2025-12-20 05:05:47', ''),
-(38, 25, 'Toyota', 'uhklhrreh', 13, '1993-02-12', '2003-06-07', 7000.00, 'Pendding', '2025-12-20 05:14:02', ''),
-(39, 21, 'Mercedes', 'client', 4, '1970-09-06', '2013-04-04', 7000.00, 'Confirm', '2025-12-20 06:46:03', ''),
-(40, 19, 'BMW', 'client', 4, '1992-12-18', '1996-11-12', 8500.00, 'Pendding', '2025-12-21 02:49:49', ''),
-(41, 18, 'BMW', 'client', 4, '1973-12-18', '1982-08-15', 8000.00, 'Pendding', '2025-12-21 02:53:27', ''),
-(42, 24, 'Honda', 'client', 4, '2022-03-30', '2011-11-13', 8000.00, 'Pendding', '2025-12-21 03:43:51', 'pay'),
-(43, 16, 'Toyota', 'admin', 4, '1993-12-18', '1994-03-12', 6000.00, 'Confirm', '2025-12-21 05:24:50', 'pay');
+INSERT INTO `bookings` (`booking_id`, `car_id`, `client_name`, `client_id`, `nid`, `start_date`, `end_date`, `pick_address`, `drop_address`, `total_amount`, `booking_status`, `created_at`) VALUES
+(27, 14, 'admin', 0, 0, '1986-05-26', '1974-01-23', '', '', 5500.00, 'Pendding', '2025-12-19 14:46:18'),
+(28, 14, 'admin', 0, 0, '1986-05-26', '1974-01-23', '', '', 5500.00, 'Pendding', '2025-12-19 14:51:11'),
+(29, 14, 'admin', 0, 0, '2012-08-17', '2000-04-06', '', '', 5500.00, 'Pendding', '2025-12-19 14:51:40'),
+(30, 14, 'client', 4, 0, '1998-11-15', '1975-03-03', '', '', 5500.00, 'Pendding', '2025-12-19 14:55:59'),
+(31, 19, 'client', 4, 0, '1995-06-18', '2009-02-07', '', '', 8500.00, 'Pendding', '2025-12-19 15:03:36'),
+(32, 19, 'client', 4, 0, '1987-05-13', '1988-06-30', '', '', 8500.00, 'Pendding', '2025-12-19 15:25:01'),
+(33, 18, 'client', 4, 615, '1971-10-22', '1985-01-05', 'Aut eaque id magna ', 'Eum odio qui hic sim', 8000.00, 'Confirm', '2025-12-29 17:32:29'),
+(34, 25, 'client', 4, 820, '1995-03-19', '1974-02-03', 'In rerum dignissimos', 'Ea eius ipsam nisi q', 7000.00, 'Confirm', '2025-12-30 16:22:53');
 
 -- --------------------------------------------------------
 
@@ -109,22 +103,26 @@ CREATE TABLE `cars` (
   `rent_price` decimal(10,2) DEFAULT NULL,
   `status` enum('available','busy') DEFAULT NULL,
   `image` varchar(255) DEFAULT NULL,
-  `details` varchar(150) NOT NULL
+  `details` varchar(150) NOT NULL,
+  `roll` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `cars`
 --
 
-INSERT INTO `cars` (`car_id`, `car_name`, `type`, `model_year`, `registration_no`, `rent_price`, `status`, `image`, `details`) VALUES
-(14, 'BMW', 'suv', 2016, '48749067', 5500.00, 'available', 'img/car_07.jfif', 'lorem ipsum'),
-(15, 'Mercedes', 'suv', 2017, '87976526', 7000.00, 'available', 'img/car_10.jfif', 'lorem ipsum'),
-(16, 'Toyota', 'suv', 2018, '57364512', 6000.00, 'available', 'img/car_03.01.jfif', 'lorem ipsum'),
-(18, 'BMW', 'suv', 2017, '58658655', 8000.00, 'available', 'img/car_06.jfif', 'lorem ipsum'),
-(19, 'BMW', 'suv', 2017, '51232377', 8500.00, 'available', 'img/car_08.jfif', 'lorem ipsum'),
-(21, 'Mercedes', 'suv', 2020, '51234377', 7000.00, 'available', 'img/car_07.jfif', 'lorem ipsum'),
-(24, 'Honda', 'suv', 2017, '75849390', 8000.00, 'available', 'img/car_03.01.jfif', 'lorem ipsum'),
-(25, 'Toyota', 'suv', 2016, '54764528', 7000.00, 'available', 'img/car_10.jfif', 'lorem ipsum');
+INSERT INTO `cars` (`car_id`, `car_name`, `type`, `model_year`, `registration_no`, `rent_price`, `status`, `image`, `details`, `roll`) VALUES
+(14, 'BMW', 'suv', 2016, '48749067', 5500.00, 'available', 'img/car_07.jfif', 'lorem ipsum', 1),
+(15, 'Mercedes', 'suv', 2017, '87976526', 7000.00, 'available', 'img/car_10.jfif', 'lorem ipsum', 1),
+(16, 'Toyota', 'suv', 2018, '57364512', 6000.00, 'available', 'img/car_03.01.jfif', 'lorem ipsum', 1),
+(18, 'BMW', 'suv', 2017, '58658655', 8000.00, 'available', 'img/car_06.jfif', 'lorem ipsum', 2),
+(19, 'BMW', 'suv', 2017, '51232377', 8500.00, 'available', 'img/car_08.jfif', 'lorem ipsum', 2),
+(21, 'Mercedes', 'suv', 2020, '51234377', 7000.00, 'available', 'img/car_07.jfif', 'lorem ipsum', 3),
+(24, 'Honda', 'suv', 2017, '75849390', 8000.00, 'available', 'img/car_03.01.jfif', 'lorem ipsum', 3),
+(25, 'Toyota', 'suv', 2016, '54764528', 7000.00, 'available', 'img/car_10.jfif', 'lorem ipsum', 4),
+(26, 'Mahindra', 'Jeep', 2020, '78642356', 5500.00, 'available', 'img/jeep01.jfif', 'lorem ipsum', 1),
+(27, 'Mahindra', 'Jeep', 2017, '48749067', 8500.00, 'available', 'img/jeep02.jfif', 'lorem ipsum', 1),
+(28, 'Mahindra', 'Jeep', 1995, '56012455', 8000.00, 'available', 'img/jeep03.jfif', 'lorem ipsum', 1);
 
 -- --------------------------------------------------------
 
@@ -183,25 +181,12 @@ CREATE TABLE `employees` (
 CREATE TABLE `payments` (
   `payment_id` int(11) NOT NULL,
   `booking_id` int(11) DEFAULT NULL,
-  `client_id` int(11) DEFAULT NULL,
-  `car_id` int(11) NOT NULL,
+  `method_id` int(11) DEFAULT NULL,
   `amount` decimal(10,2) DEFAULT NULL,
-  `acon_num` int(15) NOT NULL,
-  `pay_method` varchar(50) NOT NULL,
+  `payment_date` datetime DEFAULT NULL,
   `status` varchar(50) DEFAULT NULL,
-  `created_at` datetime DEFAULT current_timestamp()
+  `created_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `payments`
---
-
-INSERT INTO `payments` (`payment_id`, `booking_id`, `client_id`, `car_id`, `amount`, `acon_num`, `pay_method`, `status`, `created_at`) VALUES
-(3, 41, 4, 18, 8000.00, 4565231, 'Credit', 'Paid', NULL),
-(4, 30, 4, 14, 5500.00, 4452, 'Online', 'Paid', NULL),
-(5, 33, 4, 24, 8000.00, 622, 'Online', 'paid', NULL),
-(7, 31, 4, 19, 8500.00, 122, 'Debit', 'paid', NULL),
-(8, 43, 4, 16, 6000.00, 609, 'Online', 'paid', NULL);
 
 -- --------------------------------------------------------
 
@@ -268,8 +253,7 @@ INSERT INTO `users` (`user_id`, `name`, `email`, `password`, `role`, `created_at
 (9, 'arif', 'arif@gmail.com', '0ff6c3ace16359e41e37d40b8301d67f', '3', '2025-12-17 19:52:11'),
 (10, 'rakib', 'rakib@gmail.com', 'a36949228c1d9146cace6359d88968e8', '3', '2025-12-17 19:52:11'),
 (11, 'naziur', 'naziur@gmail.com', '30fa864f0bfa3a355853a921e2c769eb', '3', '2025-12-17 19:52:11'),
-(12, 'ftsgf', 'uysdyg@gmail.com', '957e74b3f7b149f515978100d4705622', '3', '2025-12-19 17:02:51'),
-(13, 'uhklhrreh', 'toufik@gmail.com', 'ac5a6a0f1b1b95e1e30bfa983344d4c1', '3', '2025-12-20 03:35:21');
+(12, 'ftsgf', 'uysdyg@gmail.com', '957e74b3f7b149f515978100d4705622', '3', '2025-12-19 17:02:51');
 
 --
 -- Indexes for dumped tables
@@ -328,7 +312,7 @@ ALTER TABLE `employees`
 ALTER TABLE `payments`
   ADD PRIMARY KEY (`payment_id`),
   ADD KEY `booking_id` (`booking_id`),
-  ADD KEY `method_id` (`client_id`);
+  ADD KEY `method_id` (`method_id`);
 
 --
 -- Indexes for table `payment_methods`
@@ -368,13 +352,13 @@ ALTER TABLE `advance_payments`
 -- AUTO_INCREMENT for table `bookings`
 --
 ALTER TABLE `bookings`
-  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `cars`
 --
 ALTER TABLE `cars`
-  MODIFY `car_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `car_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `contact`
@@ -398,7 +382,7 @@ ALTER TABLE `employees`
 -- AUTO_INCREMENT for table `payments`
 --
 ALTER TABLE `payments`
-  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `payment_methods`
@@ -416,7 +400,7 @@ ALTER TABLE `testimonials`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
