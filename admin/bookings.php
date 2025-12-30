@@ -72,11 +72,9 @@ if(!isset($_SESSION['cleint_login'])){
                   <tr>
                     <th>Booking id</th>
                     <th>Car id</th>
-                    <th>client name</th>
                     <th>client id</th>
                     <th>client nid</th>
-                    <th>Start Date</th>
-                    <th>End Date</th>
+                    <th>Date</th>
                     <th>From</th>
                     <th>To</th>
                     <th>Total Amount</th>                   
@@ -97,11 +95,10 @@ if(!isset($_SESSION['cleint_login'])){
                   <tr>
                     <td><?php echo $row->booking_id; ?></td>
                     <td><?php echo $row->car_id; ?></td>
-                    <td><?php echo $row->client_name; ?></td>
                     <td><?php echo $row->client_id; ?></td>
                     <td><?php echo $row->nid; ?></td>
-                    <td><?php echo $row->start_date; ?></td>
-                    <td><?php echo $row->end_date; ?></td>
+                    <td><?php echo $row->start_date; ?> -to-<?php echo $row->end_date; ?></td>
+                    
                     <td><?php echo $row->pick_address; ?></td>
                     <td><?php echo $row->drop_address; ?></td>
                     <td><?php echo $row->total_amount; ?></td>

@@ -130,7 +130,8 @@ session_start(); ?>
 					if (isset($_POST['submit'])) {
 						extract($_POST);
 						
-						$sql = "INSERT INTO payments VALUES(NULL, '$booking_id', '$c_id ', '$car_id', '$amount', '$acon_num', '$pay_method', 'Processing', NULL)";
+						// $sql = "INSERT INTO payments VALUES(NULL, '$booking_id', '$c_id ', '$car_id', '$amount', '$acon_num', '$pay_method', 'paid', NULL)";
+						$sql="UPDATE bookings SET booking_status = 'paid' WHERE bookings.booking_id = '$booking_id'";
 						$record = $db->query($sql);
 						echo '<div class="alert alert-success text-center" style="margin-top:20px;">
             <i class="fa fa-check-circle"></i> <strong>Success!</strong> Booking Successful.

@@ -72,7 +72,6 @@ if(!isset($_SESSION['admin_login'])){
                   <tr>
                     <th>Booking id</th>
                     <th>Car id</th>
-                    <th>car name</th>
                     <th>client name</th>
                     <th>client id</th>
                     <th>Start Date</th>
@@ -95,7 +94,6 @@ if(!isset($_SESSION['admin_login'])){
                   <tr>
                     <td><?php echo $row->booking_id; ?></td>
                     <td><?php echo $row->car_id; ?></td>
-                    <td><?php echo $row->car_name; ?></td>
                     <td><?php echo $row->client_name; ?></td>
                     <td><?php echo $row->client_id; ?></td>
                     <td><?php echo $row->start_date; ?></td>

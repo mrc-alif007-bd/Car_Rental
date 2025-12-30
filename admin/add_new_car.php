@@ -116,10 +116,15 @@ if(!isset($_SESSION['admin_login'])){
                 <label for="input-id" class="col-sm-2">price</label>
                 <input type="text" name="price" class="form-control" placeholder="Enter your car price">
               </div>
-                <div class="formgroup">
-                <label for="input-id" class="col-sm-2">status</label>
-                <input type="text" name="status" class="form-control" placeholder="Enter your car price">
+              <div class="form-formgroup">
+                  <label for="input-id" class="col-sm-2">status</label>
+                <select class="form-control" name="status">
+                    <option value="" disabled selected>car status</option>
+                    <option value="available">available</option>
+                    <option value="busy">busy</option>
+                </select>
               </div>
+                
                 <div class="formgroup">
                 <label for="input-id" class="col-sm-2">Photo</label>
                 <input type="file" name="photo" class="form-control" placeholder="Enter your car's photo">
