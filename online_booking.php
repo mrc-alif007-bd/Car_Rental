@@ -130,7 +130,7 @@ session_start(); ?>
 						extract($_POST);
 						$c_name = $_SESSION['name'];
 						$c_id = $_SESSION['user_id'];
-						$sql = "INSERT INTO bookings VALUES(NULL, '$car_id', '$car_name', '$c_name', '$c_id', '$pick_date', '$drop_date', '$car_price', 'Pendding', NULL,'pay')";
+						$sql = "INSERT INTO bookings VALUES(NULL, '$car_id', '$c_name', '$c_id', '$nid', '$pick_date', '$drop_date', '$pick_address', '$drop_address', '$car_price', 'Pendding', NULL)";
 						$record = $db->query($sql);
 						echo '<div class="alert alert-success text-center" style="margin-top:20px;">
 								<i class="fa fa-check-circle"></i> <strong>Success!</strong> Booking Successful.
@@ -139,13 +139,18 @@ session_start(); ?>
 
 					?>
 
-					<form class="online-booking-form row" method="post">
+					<form xz class="online-booking-form row" method="post">
 
 						<h4>Booking Details</h4>
 
 						<div class="form-group col-md-6">
 							<label for="">NID Number</label><br>
 							<input type="text" class="form-control" name="nid" id="">
+						</div>
+
+						<div class="form-group col-md-6">
+							<label>Pickup Date</label>
+							<input class="form-control" type="date" name="pick_date" required />
 						</div>
 
 						<div class="form-group col-md-6">
@@ -163,24 +168,9 @@ session_start(); ?>
 							<textarea name="drop_address" class="form-control" rows="5" required></textarea>
 						</div>
 
-						<div class="form-group col-md-6">
-							<label>Pickup Date</label>
-							<input
-								class="form-control"
-								type="date"
-								name="pick_date"
-								required />
-						</div>
+						
 
-						<div class="form-group col-md-6">
-							<label>Payment Method</label>
-							<select class="form-control" name="pay_method" required>
-								<option value="">Select Payment Method</option>
-								<option value="Debit">Debit</option>
-								<option value="Credit">Credit</option>
-								<option value="Online">Online</option>
-							</select>
-						</div>
+						
 
 						<div class="form-group col-md-12">
 							<button type="submit" name="submit" class="btn btn-primary">Book</button>

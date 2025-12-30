@@ -72,11 +72,13 @@ if(!isset($_SESSION['cleint_login'])){
                   <tr>
                     <th>Booking id</th>
                     <th>Car id</th>
-                    <th>car name</th>
                     <th>client name</th>
                     <th>client id</th>
+                    <th>client nid</th>
                     <th>Start Date</th>
                     <th>End Date</th>
+                    <th>From</th>
+                    <th>To</th>
                     <th>Total Amount</th>                   
                     <th>Booking status</th>
                     <th>Creat At</th>
@@ -95,15 +97,17 @@ if(!isset($_SESSION['cleint_login'])){
                   <tr>
                     <td><?php echo $row->booking_id; ?></td>
                     <td><?php echo $row->car_id; ?></td>
-                    <td><?php echo $row->car_name; ?></td>
                     <td><?php echo $row->client_name; ?></td>
                     <td><?php echo $row->client_id; ?></td>
+                    <td><?php echo $row->nid; ?></td>
                     <td><?php echo $row->start_date; ?></td>
                     <td><?php echo $row->end_date; ?></td>
+                    <td><?php echo $row->pick_address; ?></td>
+                    <td><?php echo $row->drop_address; ?></td>
                     <td><?php echo $row->total_amount; ?></td>
                     <td><?php echo $row->booking_status; ?></td>
                     <td><?php echo $row->created_at; ?></td>
-                    <td style="text-align: center;"><?php echo $row->action; ?><a href="../payment_form.php?b_id=<?php echo $row->booking_id; ?>&car_id=<?php echo $row->car_id ?>&c_id=<?php echo $row->client_id ?>&amount=<?php echo $row->total_amount ?>">
+                    <td style="text-align: center;"><a href="../payment_form.php?b_id=<?php echo $row->booking_id; ?>&car_id=<?php echo $row->car_id ?>&c_id=<?php echo $row->client_id ?>&amount=<?php echo $row->total_amount ?>">
                         
                         <button type="button" class="btn btn-default">payment</button>
                         
