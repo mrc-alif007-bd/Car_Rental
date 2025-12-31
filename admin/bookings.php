@@ -54,8 +54,8 @@ if(!isset($_SESSION['cleint_login'])){
                   <tr>
                     <th>Booking id</th>
                     <th>Car id</th>
-                    <th>client id</th>
-                    <th>client nid</th>
+                    <!-- <th>client id</th>
+                    <th>client nid</th> -->
                     <th>Date</th>
                     <th>From</th>
                     <th>To</th>
@@ -63,7 +63,7 @@ if(!isset($_SESSION['cleint_login'])){
                     <th>Booking status</th>
                     <th>Creat At</th>
                     <th>Invoice</th>
-                    <th colspan="2" style="text-align: center;">Action</th>
+                    <th rowspan="2" style="text-align: center;">Action</th>
                   </tr>
                   </thead>
                   <tbody>
@@ -78,8 +78,8 @@ if(!isset($_SESSION['cleint_login'])){
                   <tr>
                     <td><?php echo $row->booking_id; ?></td>
                     <td><?php echo $row->car_id; ?></td>
-                    <td><?php echo $row->client_id; ?></td>
-                    <td><?php echo $row->nid; ?></td>
+                    <!-- <td><?php //echo $row->client_id; ?></td>
+                    <td><?php //echo $row->nid; ?></td> -->
                     <td><?php echo $row->start_date; ?> -to-<?php echo $row->end_date; ?></td>
                     
                     <td><?php echo $row->pick_address; ?></td>
@@ -98,9 +98,7 @@ if(!isset($_SESSION['cleint_login'])){
                       <a href="../payment_form.php?b_id=<?php echo $row->booking_id; ?>&car_id=<?php echo $row->car_id ?>&c_id=<?php echo $row->client_id ?>&amount=<?php echo $row->total_amount ?>">
                         <button type="button" class="btn btn-default">payment</button>
                       </a>
-                    </td>
-                    <td style="text-align: center;">
-                      <a href="bookings_delete.php?b_id=<?php echo $row->booking_id; ?>">Delete</a>
+                      <a href="bookings_delete.php?b_id=<?php echo $row->booking_id; ?>"> <button type="button" class="btn btn-default">Delete</button></a>
                     </td>
                   </tr>
                    <?php 

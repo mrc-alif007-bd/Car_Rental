@@ -67,11 +67,7 @@ if(!isset($_SESSION['admin_login'])){
                 <?php 
                 if(isset($_POST['submit'])){
                   extract($_POST);
-                  $p_name = $_FILES['photo']['name'];
-                  $tmp_name = $_FILES['photo']['tmp_name'];
-                  $path =  "images/".$p_name ;
-                  move_uploaded_file($tmp_name, $path);
-                  $sql = "INSERT INTO cars VALUES(NULL, '$name', '$brand', '$type', '$model_year', '$reg_no', '$price', '$status', '$path')";
+                  $sql = "INSERT INTO users VALUES(NULL, '$name', '$email', '$password', '2', NULL)";
                   $db->query($sql);
                   if($db->affected_rows){
                     echo '<div class="alert alert-success">Successfully Submitted</div>';
@@ -96,17 +92,17 @@ if(!isset($_SESSION['admin_login'])){
                 <label for="input-id" class="col-sm-2">Password</label>
                 <input type="text" name="password" class="form-control" placeholder="Enter your password">
               </div>
-                <div class="formgroup">
+                <!-- <div class="formgroup">
                 <label for="input-id" class="col-sm-2">Role</label>
                 <input type="text" name="role" class="form-control" placeholder="Enter the role">
-              </div>
-                <div class="formgroup">
+              </div> -->
+                <!-- <div class="formgroup">
                 <label for="input-id" class="col-sm-2">Nid-Photo</label>
                 <input type="file" name="photo" class="form-control" placeholder="Enter your car's photo">
-              </div>
+              </div> -->
                 
-              <span class="label">Details</span>
-              <textarea id="summernote" name="details" rows="30">  </textarea>
+              <!-- <span class="label">Details</span>
+              <textarea id="summernote" name="details" rows="30">  </textarea> -->
               <br><br>
               <input type="submit" name="submit" value="SUBMIT">
               </form>

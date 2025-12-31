@@ -35,12 +35,14 @@ session_start();
                     $_SESSION['admin_login'] = $email;
                     $_SESSION['email'] = $email ;
                     $_SESSION['name'] = $row['name'] ;
+                    $_SESSION['user_id'] = $row['user_id'] ;
                     header("Location:dashboard_admin.php");
                 }
                 if ($role == 2) {
                     $_SESSION['employee_login'] = $email;
                     $_SESSION['email'] = $email ;
                     $_SESSION['name'] = $row['name'] ;
+                    $_SESSION['user_id'] = $row['user_id'] ;
                     header("Location:dashboard_employee.php");
                 }
                 if ($role == 3) {
@@ -87,7 +89,7 @@ session_start();
                     <option value="" disabled selected>Login As</option>
                     <option value="1">Admin</option>
                     <option value="2">Employee</option>
-                    <option value="3">Cleint</option>
+                    <option value="3">Client</option>
 
                 </select>
             </div>

@@ -45,7 +45,7 @@ if(!isset($_SESSION['admin_login'])){
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Text Editors</h1>
+            <h1>Add Cars </h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">

@@ -90,7 +90,7 @@ if(!isset($_SESSION['admin_login'])){
                     <td><?php echo $row->email; ?></td>
                     <td><?php echo $row->role; ?></td>
                     <td><?php echo $row->created_at; ?></td>
-                    <td></td>
+                    <td><a href="employee_delete.php?user_id=<?php echo $row->user_id; ?>">Delete</a></td>  
                   </tr>
                    <?php 
                   endwhile;

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 31, 2025 at 02:09 PM
+-- Generation Time: Dec 31, 2025 at 07:58 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -83,14 +83,15 @@ INSERT INTO `bookings` (`booking_id`, `car_id`, `client_name`, `client_id`, `nid
 (27, 14, 'admin', 0, 0, '1986-05-26', '1974-01-23', '', '', 5500.00, 'Pendding', '', '2025-12-19 14:46:18'),
 (28, 14, 'admin', 0, 0, '1986-05-26', '1974-01-23', '', '', 5500.00, 'Pendding', '', '2025-12-19 14:51:11'),
 (29, 14, 'admin', 0, 0, '2012-08-17', '2000-04-06', '', '', 5500.00, 'Pendding', '', '2025-12-19 14:51:40'),
-(30, 14, 'client', 4, 0, '1998-11-15', '1975-03-03', '', '', 5500.00, 'paid', '', '2025-12-19 14:55:59'),
+(30, 14, 'client', 4, 0, '1998-11-15', '1975-03-03', '', '', 5500.00, 'Confirm', '', '2025-12-19 14:55:59'),
 (31, 19, 'client', 4, 0, '1995-06-18', '2009-02-07', '', '', 8500.00, 'Pendding', '', '2025-12-19 15:03:36'),
 (32, 19, 'client', 4, 0, '1987-05-13', '1988-06-30', '', '', 8500.00, 'Pendding', '', '2025-12-19 15:25:01'),
 (33, 18, 'client', 4, 615, '1971-10-22', '1985-01-05', 'Aut eaque id magna ', 'Eum odio qui hic sim', 8000.00, 'Confirm', '', '2025-12-29 17:32:29'),
 (34, 25, 'client', 4, 820, '1995-03-19', '1974-02-03', 'In rerum dignissimos', 'Ea eius ipsam nisi q', 7000.00, 'Confirmed', '', '2025-12-30 16:22:53'),
 (35, 28, 'client', 4, 731, '1980-03-17', '1970-06-04', 'Laboris sint vitae c', 'Autem qui sit ea te', 8000.00, 'Pendding', '', '2025-12-31 12:28:29'),
 (36, 28, 'client', 4, 46, '2007-04-10', '1976-05-19', 'Excepturi omnis et v', 'Eius aliquid volupta', 8000.00, 'paid', 'INV-208223', '2025-12-31 12:32:55'),
-(37, 27, 'client', 4, 431, '2018-04-25', '1972-09-01', 'Officia elit aute i', 'Incididunt dolorem d', 8500.00, 'paid', 'INV-435897', '2025-12-31 12:45:59');
+(37, 27, 'client', 4, 431, '2018-04-25', '1972-09-01', 'Officia elit aute i', 'Incididunt dolorem d', 8500.00, 'paid', 'INV-435897', '2025-12-31 12:45:59'),
+(38, 25, 'client', 4, 524, '1991-09-26', '1970-12-13', 'Nostrum minus omnis ', 'Non pariatur Non au', 7000.00, 'paid', 'INV-900663', '2025-12-31 13:32:44');
 
 -- --------------------------------------------------------
 
@@ -252,12 +253,11 @@ INSERT INTO `users` (`user_id`, `name`, `email`, `password`, `role`, `created_at
 (4, 'client', 'client@gmail.com', '62608e08adc29a8d6dbc9754e659f125', '3', '2025-12-19 16:46:22'),
 (5, 'kawsar', 'kawsar@gmail.com', '8a15329d6eaf13bce1193bd42d0dd5aa', '2', '2025-12-17 19:47:12'),
 (6, 'tareq', 'tareq@gmail.com', '0d20b93812a60f072cbcf2ac64b271a6', '2', '2025-12-17 19:48:35'),
-(7, 'ziya', 'ziya@gmail.com', 'd77f18448567c402188661e60731311b', '2', '2025-12-17 19:50:05'),
-(8, 'rana', 'rana@gmail.com', '90a1e95dba0d3d9c11e3f220cc4f7879', '2', '2025-12-17 19:50:05'),
 (9, 'arif', 'arif@gmail.com', '0ff6c3ace16359e41e37d40b8301d67f', '3', '2025-12-17 19:52:11'),
 (10, 'rakib', 'rakib@gmail.com', 'a36949228c1d9146cace6359d88968e8', '3', '2025-12-17 19:52:11'),
 (11, 'naziur', 'naziur@gmail.com', '30fa864f0bfa3a355853a921e2c769eb', '3', '2025-12-17 19:52:11'),
-(12, 'ftsgf', 'uysdyg@gmail.com', '957e74b3f7b149f515978100d4705622', '3', '2025-12-19 17:02:51');
+(12, 'ftsgf', 'uysdyg@gmail.com', '957e74b3f7b149f515978100d4705622', '3', '2025-12-19 17:02:51'),
+(15, 'Dieter Rosa', 'luhiroko@mailinator.com', 'luhiroko', '2', '2025-12-31 18:54:02');
 
 --
 -- Indexes for dumped tables
@@ -356,7 +356,7 @@ ALTER TABLE `advance_payments`
 -- AUTO_INCREMENT for table `bookings`
 --
 ALTER TABLE `bookings`
-  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `cars`
@@ -404,7 +404,7 @@ ALTER TABLE `testimonials`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

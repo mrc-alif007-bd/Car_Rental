@@ -63,7 +63,7 @@ if(!isset($_SESSION['admin_login'])){
 
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Employee Table</h3>
+                <h3 class="card-title">client Table</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -90,7 +90,7 @@ if(!isset($_SESSION['admin_login'])){
                     <td><?php echo $row->email; ?></td>
                     <td><?php echo $row->role; ?></td>
                     <td><?php echo $row->created_at; ?></td>
-                    <td></td>
+                    <td><a href="client_delete.php?user_id=<?php echo $row->user_id; ?>">Delete</a></td>  
                   </tr>
                    <?php 
                   endwhile;
