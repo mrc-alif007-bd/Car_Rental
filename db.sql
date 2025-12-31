@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 30, 2025 at 05:51 PM
+-- Generation Time: Dec 31, 2025 at 02:09 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -71,6 +71,7 @@ CREATE TABLE `bookings` (
   `drop_address` varchar(100) NOT NULL,
   `total_amount` decimal(10,2) DEFAULT NULL,
   `booking_status` varchar(50) DEFAULT NULL,
+  `invoice_id` varchar(50) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -78,15 +79,18 @@ CREATE TABLE `bookings` (
 -- Dumping data for table `bookings`
 --
 
-INSERT INTO `bookings` (`booking_id`, `car_id`, `client_name`, `client_id`, `nid`, `start_date`, `end_date`, `pick_address`, `drop_address`, `total_amount`, `booking_status`, `created_at`) VALUES
-(27, 14, 'admin', 0, 0, '1986-05-26', '1974-01-23', '', '', 5500.00, 'Pendding', '2025-12-19 14:46:18'),
-(28, 14, 'admin', 0, 0, '1986-05-26', '1974-01-23', '', '', 5500.00, 'Pendding', '2025-12-19 14:51:11'),
-(29, 14, 'admin', 0, 0, '2012-08-17', '2000-04-06', '', '', 5500.00, 'Pendding', '2025-12-19 14:51:40'),
-(30, 14, 'client', 4, 0, '1998-11-15', '1975-03-03', '', '', 5500.00, 'Pendding', '2025-12-19 14:55:59'),
-(31, 19, 'client', 4, 0, '1995-06-18', '2009-02-07', '', '', 8500.00, 'Pendding', '2025-12-19 15:03:36'),
-(32, 19, 'client', 4, 0, '1987-05-13', '1988-06-30', '', '', 8500.00, 'Pendding', '2025-12-19 15:25:01'),
-(33, 18, 'client', 4, 615, '1971-10-22', '1985-01-05', 'Aut eaque id magna ', 'Eum odio qui hic sim', 8000.00, 'Confirm', '2025-12-29 17:32:29'),
-(34, 25, 'client', 4, 820, '1995-03-19', '1974-02-03', 'In rerum dignissimos', 'Ea eius ipsam nisi q', 7000.00, 'Confirm', '2025-12-30 16:22:53');
+INSERT INTO `bookings` (`booking_id`, `car_id`, `client_name`, `client_id`, `nid`, `start_date`, `end_date`, `pick_address`, `drop_address`, `total_amount`, `booking_status`, `invoice_id`, `created_at`) VALUES
+(27, 14, 'admin', 0, 0, '1986-05-26', '1974-01-23', '', '', 5500.00, 'Pendding', '', '2025-12-19 14:46:18'),
+(28, 14, 'admin', 0, 0, '1986-05-26', '1974-01-23', '', '', 5500.00, 'Pendding', '', '2025-12-19 14:51:11'),
+(29, 14, 'admin', 0, 0, '2012-08-17', '2000-04-06', '', '', 5500.00, 'Pendding', '', '2025-12-19 14:51:40'),
+(30, 14, 'client', 4, 0, '1998-11-15', '1975-03-03', '', '', 5500.00, 'paid', '', '2025-12-19 14:55:59'),
+(31, 19, 'client', 4, 0, '1995-06-18', '2009-02-07', '', '', 8500.00, 'Pendding', '', '2025-12-19 15:03:36'),
+(32, 19, 'client', 4, 0, '1987-05-13', '1988-06-30', '', '', 8500.00, 'Pendding', '', '2025-12-19 15:25:01'),
+(33, 18, 'client', 4, 615, '1971-10-22', '1985-01-05', 'Aut eaque id magna ', 'Eum odio qui hic sim', 8000.00, 'Confirm', '', '2025-12-29 17:32:29'),
+(34, 25, 'client', 4, 820, '1995-03-19', '1974-02-03', 'In rerum dignissimos', 'Ea eius ipsam nisi q', 7000.00, 'Confirmed', '', '2025-12-30 16:22:53'),
+(35, 28, 'client', 4, 731, '1980-03-17', '1970-06-04', 'Laboris sint vitae c', 'Autem qui sit ea te', 8000.00, 'Pendding', '', '2025-12-31 12:28:29'),
+(36, 28, 'client', 4, 46, '2007-04-10', '1976-05-19', 'Excepturi omnis et v', 'Eius aliquid volupta', 8000.00, 'paid', 'INV-208223', '2025-12-31 12:32:55'),
+(37, 27, 'client', 4, 431, '2018-04-25', '1972-09-01', 'Officia elit aute i', 'Incididunt dolorem d', 8500.00, 'paid', 'INV-435897', '2025-12-31 12:45:59');
 
 -- --------------------------------------------------------
 
@@ -352,7 +356,7 @@ ALTER TABLE `advance_payments`
 -- AUTO_INCREMENT for table `bookings`
 --
 ALTER TABLE `bookings`
-  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `cars`
