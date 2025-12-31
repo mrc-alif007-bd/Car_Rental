@@ -80,7 +80,7 @@ if(!isset($_SESSION['cleint_login'])){
                     <th>Total Amount</th>                   
                     <th>Booking status</th>
                     <th>Creat At</th>
-                    <th>Action</th>
+                    <th colspan="2" style="text-align: center;">Action</th>
                   </tr>
                   </thead>
                   <tbody>
@@ -104,12 +104,15 @@ if(!isset($_SESSION['cleint_login'])){
                     <td><?php echo $row->total_amount; ?></td>
                     <td><?php echo $row->booking_status; ?></td>
                     <td><?php echo $row->created_at; ?></td>
-                    <td style="text-align: center;"><a href="../payment_form.php?b_id=<?php echo $row->booking_id; ?>&car_id=<?php echo $row->car_id ?>&c_id=<?php echo $row->client_id ?>&amount=<?php echo $row->total_amount ?>">
-                        
+                    
+                    <td style="text-align: center;">
+                      <a href="../payment_form.php?b_id=<?php echo $row->booking_id; ?>&car_id=<?php echo $row->car_id ?>&c_id=<?php echo $row->client_id ?>&amount=<?php echo $row->total_amount ?>">
                         <button type="button" class="btn btn-default">payment</button>
-                        
-                    </a></td>
-                   
+                      </a>
+                    </td>
+                    <td style="text-align: center;">
+                      <a href="bookings_delete.php?b_id=<?php echo $row->booking_id; ?>">Delete</a>
+                    </td>
                   </tr>
                    <?php 
                   endwhile;
