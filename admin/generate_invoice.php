@@ -102,7 +102,12 @@ if (isset($_GET['b_id'])) {
         if(strtolower(trim($db_status)) == "paid"){
             $pdf->SetTextColor(0, 128, 0); 
             $status_text = "PAID";
-        } else {
+        }
+        elseif($db_status == "Confirm"){
+            $pdf->SetTextColor(0, 128, 0); 
+            $status_text = "PAID";
+        }
+        else {
             $pdf->SetTextColor(255, 0, 0); 
             $status_text = "DUE";
         }
