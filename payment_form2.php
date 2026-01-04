@@ -130,8 +130,8 @@ session_start(); ?>
 					if (isset($_POST['submit'])) {
 						extract($_POST);
 						
-						// $sql = "INSERT INTO payments VALUES(NULL, '$booking_id', '$c_id ', '$car_id', '$amount', '$acon_num', '$pay_method', 'paid', NULL)";
-						$sql="UPDATE bookings SET booking_status = 'paid' WHERE bookings.booking_id = '$booking_id'";
+						 $sql = "INSERT INTO payments VALUES(NULL, '$booking_id', '$c_id ', '$car_id', '$amount', '$acon_num', '$pay_method', 'paid', NULL)";
+						// $sql="UPDATE bookings SET booking_status = 'paid' WHERE bookings.booking_id = '$booking_id'";
 						$record = $db->query($sql);
 						echo '<div class="alert alert-success text-center" style="margin-top:20px;">
             <i class="fa fa-check-circle"></i> <strong>Success!</strong> Booking Successful.
@@ -147,10 +147,6 @@ session_start(); ?>
 						<div class="form-group col-md-6">
 							<label for="">Acount Number</label><br>
 							<input type="text" class="form-control" name="acon_num" id="">
-						</div>
-						<div class="form-group col-md-6">
-							<label for="">Ammount</label><br>
-							<input type="text" class="form-control" placeholder="<?php echo $amount ;?>" disabled>
 						</div>
 
 						<div class="form-group col-md-6">
